@@ -1,0 +1,656 @@
+[
+    {
+      "table_name": "staff",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "code",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "first_name",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "last_name",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "picture",
+          "data_type": "bytea",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "picture_content_type",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "curriculum_vitae",
+          "data_type": "bytea",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "curriculum_vitae_content_type",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "email",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "phone_number",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "address",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "zip_code",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "city",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "state",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "mobility",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "average_daily_cost",
+          "data_type": "real",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "full_name",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "staff_activity_rate_excluding_holidays",
+          "data_type": "real",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "staff_activity_rate_including_holidays",
+          "data_type": "real",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "occupation_rate",
+          "data_type": "real",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "unbilled_activity_rate",
+          "data_type": "real",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "shared",
+          "data_type": "boolean",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "job_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "company_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "agency_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "experience_years",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "level_of_study",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "tenant_name",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "column_name": "agency_id",
+          "referenced_table": "agency",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "company_id",
+          "referenced_table": "company",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "job_id",
+          "referenced_table": "job",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    {
+      "table_name": "project",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "title",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "start_date",
+          "data_type": "date",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "end_date",
+          "data_type": "date",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "contract_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "project_type_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "provider_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "code",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "description",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "achievement_ratio",
+          "data_type": "double precision",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "is_archived",
+          "data_type": "boolean",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "tenant_name",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "column_name": "contract_id",
+          "referenced_table": "contract",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "project_type_id",
+          "referenced_table": "project_type",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "provider_id",
+          "referenced_table": "provider",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    {
+      "table_name": "project_type",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "title",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "description",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "prefix",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "billable",
+          "data_type": "boolean",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "nature",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "tenant_name",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        }
+      ],
+      "foreign_keys": null
+    },
+    {
+      "table_name": "project_ressource",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "role",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "staff_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "project_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "tenant_name",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "column_name": "project_id",
+          "referenced_table": "project",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "staff_id",
+          "referenced_table": "staff",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    {
+      "table_name": "activity_group",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "name",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "rank",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "parent_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "project_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "parent_rank",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "achievement_ratio",
+          "data_type": "double precision",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "tenant_name",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "column_name": "project_id",
+          "referenced_table": "project",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "parent_id",
+          "referenced_table": "activity_group",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    {
+      "table_name": "activity_status",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "title",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "range",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "project_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "color",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "tenant_name",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "column_name": "project_id",
+          "referenced_table": "project",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    {
+      "table_name": "activity",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "code",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "end_date",
+          "data_type": "timestamp without time zone",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "estimate",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "label",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "parent_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "priority",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "project_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "staff_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "start_date",
+          "data_type": "timestamp without time zone",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "status",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "title",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "description",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "user_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "activity_status_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "activity_group_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "activity_type_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "contract_items_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "iteration_id",
+          "data_type": "bigint",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "code_number",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "rank",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "parent_rank",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "status_rank",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "iteration_rank",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "achievement_ratio",
+          "data_type": "double precision",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "estimation",
+          "data_type": "double precision",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "tenant_name",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "column_name": "staff_id",
+          "referenced_table": "staff",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "activity_status_id",
+          "referenced_table": "activity_status",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "parent_id",
+          "referenced_table": "activity",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "activity_group_id",
+          "referenced_table": "activity_group",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "iteration_id",
+          "referenced_table": "iteration",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "user_id",
+          "referenced_table": "jhi_user",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "project_id",
+          "referenced_table": "project",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "contract_items_id",
+          "referenced_table": "contract_items",
+          "referenced_column": "id"
+        },
+        {
+          "column_name": "activity_type_id",
+          "referenced_table": "activity_type",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    {
+      "table_name": "activity_type",
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "bigint",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "color",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "description",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "icon",
+          "data_type": "bytea",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "icon_content_type",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "name",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "tenant_name",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        }
+      ],
+      "foreign_keys": null
+    }
+  ]

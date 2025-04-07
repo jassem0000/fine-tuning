@@ -1,0 +1,3196 @@
+{
+  "examples": [
+    {
+      "question": "List all projects.",
+      "sql": "SELECT * FROM project"
+    },
+    {
+      "question": "Give me all projects.",
+      "sql": "SELECT * FROM project"
+    },
+    {
+      "question": "Show all projects.",
+      "sql": "SELECT * FROM project"
+    },
+    {
+      "question": "Retrieve all projects.",
+      "sql": "SELECT * FROM project"
+    },
+    {
+      "question": "What are all the projects?",
+      "sql": "SELECT * FROM project"
+    },
+    {
+      "question": "Show me all staff.",
+      "sql": "SELECT * FROM staff"
+    },
+    {
+      "question": "List all staff members.",
+      "sql": "SELECT * FROM staff"
+    },
+    {
+      "question": "Retrieve all staff.",
+      "sql": "SELECT * FROM staff"
+    },
+    {
+      "question": "Show me all activities.",
+      "sql": "SELECT * FROM activity"
+    },
+    {
+      "question": "List all activities.",
+      "sql": "SELECT * FROM activity"
+    },
+    {
+      "question": "Retrieve all activity records.",
+      "sql": "SELECT * FROM activity"
+    },
+    {
+      "question": "Show me all project resources.",
+      "sql": "SELECT * FROM project_ressource"
+    },
+    {
+      "question": "List all resources for projects.",
+      "sql": "SELECT * FROM project_ressource"
+    },
+    {
+      "question": "Retrieve all project resources.",
+      "sql": "SELECT * FROM project_ressource"
+    },
+    {
+      "question": "Show me all activity statuses.",
+      "sql": "SELECT * FROM activity_status"
+    },
+    {
+      "question": "Show me all activity history.",
+      "sql": "SELECT * FROM activity_history"
+    },
+    {
+      "question": "Show the name of the staff member with ID 10.",
+      "sql": "SELECT full_name FROM staff WHERE id = 10;"
+    },
+    {
+      "question": "What is the title of the project with ID 5?",
+      "sql": "SELECT title FROM project WHERE id = 5;"
+    },
+    {
+      "question": "Show details of the staff member with ID 7.",
+      "sql": "SELECT * FROM staff WHERE id = 7;"
+    },
+    {
+      "question": "Show details of the project with ID 3.",
+      "sql": "SELECT * FROM project WHERE id = 3;"
+    },
+    {
+      "question": "Show details of the activity with ID 15.",
+      "sql": "SELECT * FROM activity WHERE id = 15;"
+    },
+    {
+      "question": "Show the name of the staff member with ID 8.",
+      "sql": "SELECT full_name FROM staff WHERE id = 8;"
+    },
+    {
+      "question": "What is the title of the project with ID 2?",
+      "sql": "SELECT title FROM project WHERE id = 2;"
+    },
+    {
+      "question": "Show details of the staff member with ID 12.",
+      "sql": "SELECT * FROM staff WHERE id = 12;"
+    },
+    {
+      "question": "Show details of the project with ID 4.",
+      "sql": "SELECT * FROM project WHERE id = 4;"
+    },
+    {
+      "question": "Show details of the activity with ID 20.",
+      "sql": "SELECT * FROM activity WHERE id = 20;"
+    },
+    {
+      "question": "What is the status of the activity with ID 400?",
+      "sql": "SELECT T2.title FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE T1.id = 400;"
+    },
+    {
+      "question": "What are the statuses of activities assigned to Farouk?",
+      "sql": "SELECT T2.title FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id JOIN staff T3 ON T1.staff_id = T3.id WHERE T3.first_name = 'Farouk';"
+    },
+    {
+      "question": "List the statuses of activities for staff named Farouk.",
+      "sql": "SELECT T2.title FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id JOIN staff T3 ON T1.staff_id = T3.id WHERE T3.first_name = 'Farouk';"
+    },
+    {
+      "question": "Retrieve the activity statuses for Farouk.",
+      "sql": "SELECT T2.title FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id JOIN staff T3 ON T1.staff_id = T3.id WHERE T3.first_name = 'Farouk';"
+    },
+    {
+      "question": "Show the statuses of activities assigned to Farouk.",
+      "sql": "SELECT T2.title FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id JOIN staff T3 ON T1.staff_id = T3.id WHERE T3.first_name = 'Farouk';"
+    },
+    {
+      "question": "Show me all projects that have end date '03/03/2025'.",
+      "sql": "SELECT * FROM project WHERE end_date = '2025-03-03';"
+    },
+    {
+      "question": "List projects ending on March 3rd, 2025.",
+      "sql": "SELECT * FROM project WHERE end_date = '2025-03-03';"
+    },
+    {
+      "question": "Retrieve projects with an end date of 2025-03-03.",
+      "sql": "SELECT * FROM project WHERE end_date = '2025-03-03';"
+    },
+    {
+      "question": "Show all project resources.",
+      "sql": "SELECT * FROM project_ressource"
+    },
+    {
+      "question": "List all resources for a project id of 5.",
+      "sql": "SELECT * FROM project_ressource WHERE project_id = 5"
+    },
+    {
+      "question": "Retrieve all resources assigned to project ID 5.",
+      "sql": "SELECT * FROM project_ressource WHERE project_id = 5"
+    },
+    {
+      "question": "Show the roles of resources in project ID 3.",
+      "sql": "SELECT role FROM project_ressource WHERE project_id = 3"
+    },
+    {
+      "question": "List the staff IDs and roles for resources in project ID 2.",
+      "sql": "SELECT staff_id, role FROM project_ressource WHERE project_id = 2"
+    },
+    {
+      "question": "Retrieve the roles and staff IDs for resources in project ID 4.",
+      "sql": "SELECT role, staff_id FROM project_ressource WHERE project_id = 4"
+    },
+    {
+      "question": "Show the tenant names of resources in project ID 1.",
+      "sql": "SELECT tenant_name FROM project_ressource WHERE project_id = 1"
+    },
+    {
+      "question": "List all resources for projects under tenant 'HITsolutions'.",
+      "sql": "SELECT * FROM project_ressource WHERE tenant_name = 'HITsolutions'"
+    },
+    {
+      "question": "Retrieve the roles of resources for projects with tenant 'HITsolutions'.",
+      "sql": "SELECT role FROM project_ressource WHERE tenant_name = 'HITsolutions'"
+    },
+    {
+      "question": "Show the staff IDs of resources for projects with tenant 'HITsolutions'.",
+      "sql": "SELECT staff_id FROM project_ressource WHERE tenant_name = 'HITsolutions'"
+    },
+    {
+      "question": "How many projects that have a start date year 2025.",
+      "sql": "SELECT COUNT(*) FROM project WHERE YEAR(start_date) = 2025;"
+    },
+    {
+      "question": "Count the number of projects starting in 2025.",
+      "sql": "SELECT COUNT(*) FROM project WHERE YEAR(start_date) = 2025;"
+    },
+    {
+      "question": "How many projects were initiated in the year 2025?",
+      "sql": "SELECT COUNT(*) FROM project WHERE YEAR(start_date) = 2025;"
+    },
+    {
+      "question": "Show every staff member with first name 'Ahmed'.",
+      "sql": "SELECT * FROM staff WHERE first_name = 'Ahmed';"
+    },
+    {
+      "question": "List all staff named Ahmed.",
+      "sql": "SELECT * FROM staff WHERE first_name = 'Ahmed';"
+    },
+    {
+      "question": "Retrieve staff records for those named Ahmed.",
+      "sql": "SELECT * FROM staff WHERE first_name = 'Ahmed';"
+    },
+    {
+      "question": "Show all resources assigned to the project titled 'MIA'.",
+      "sql": "SELECT T1.id, T1.first_name, T1.last_name FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.title = 'MIA';"
+    },
+    {
+      "question": "List all staff members working on the project named 'MIA'.",
+      "sql": "SELECT T1.id, T1.first_name, T1.last_name FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.title = 'MIA';"
+    },
+    {
+      "question": "Retrieve the resources for the project with the title 'MIA'.",
+      "sql": "SELECT T1.id, T1.first_name, T1.last_name FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.title = 'MIA';"
+    },
+    {
+      "question": "How many projects started before '04/03/2025'?",
+      "sql": "SELECT COUNT(*) FROM project WHERE start_date < '2025-03-04';"
+    },
+    {
+      "question": "Count the projects that began before March 4th, 2025.",
+      "sql": "SELECT COUNT(*) FROM project WHERE start_date < '2025-03-04';"
+    },
+    {
+      "question": "How many projects have a start date earlier than 2025-03-04?",
+      "sql": "SELECT COUNT(*) FROM project WHERE start_date < '2025-03-04';"
+    },
+    {
+      "question": "Show all staff working under the tenant 'HITsolutions'.",
+      "sql": "SELECT * FROM staff WHERE tenant_name = 'HITsolutions';"
+    },
+    {
+      "question": "List staff members associated with tenant 'HITsolutions'.",
+      "sql": "SELECT * FROM staff WHERE tenant_name = 'HITsolutions';"
+    },
+    {
+      "question": "Retrieve staff records for those under tenant 'HITsolutions'.",
+      "sql": "SELECT * FROM staff WHERE tenant_name = 'HITsolutions';"
+    },
+    {
+      "question": "List all project titles and their start dates.",
+      "sql": "SELECT title, start_date FROM project;"
+    },
+    {
+      "question": "Show the titles and start dates of all projects.",
+      "sql": "SELECT title, start_date FROM project;"
+    },
+    {
+      "question": "Show tasks of Ahmed.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Ahmed';"
+    },
+    {
+      "question": "List tasks assigned to staff with ID 5.",
+      "sql": "SELECT * FROM activity WHERE staff_id = 5;"
+    },
+    {
+      "question": "Show tasks for staff ID 5.",
+      "sql": "SELECT * FROM activity WHERE staff_id = 5;"
+    },
+    {
+      "question": "Retrieve activities for staff member with ID 5.",
+      "sql": "SELECT * FROM activity WHERE staff_id = 5;"
+    },
+    {
+      "question": "Show all activities for project ID 2.",
+      "sql": "SELECT * FROM activity WHERE project_id = 2;"
+    },
+    {
+      "question": "List activities for project ID 2.",
+      "sql": "SELECT * FROM activity WHERE project_id = 2;"
+    },
+    {
+      "question": "Retrieve all activities for project with ID 2.",
+      "sql": "SELECT * FROM activity WHERE project_id = 2;"
+    },
+    {
+      "question": "List all staff assigned to project ID 3.",
+      "sql": "SELECT T1.* FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id WHERE T2.project_id = 3;"
+    },
+    {
+      "question": "Show staff members for project ID 3.",
+      "sql": "SELECT T1.* FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id WHERE T2.project_id = 3;"
+    },
+    {
+      "question": "Retrieve staff assigned to project with ID 3.",
+      "sql": "SELECT T1.* FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id WHERE T2.project_id = 3;"
+    },
+    {
+      "question": "Show the resources assigned to project ID 4.",
+      "sql": "SELECT T1.* FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id WHERE T2.project_id = 4;"
+    },
+    {
+      "question": "List staff assigned to project ID 4.",
+      "sql": "SELECT T1.* FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id WHERE T2.project_id = 4;"
+    },
+    {
+      "question": "Retrieve resources for project with ID 4.",
+      "sql": "SELECT T1.* FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id WHERE T2.project_id = 4;"
+    },
+    {
+      "question": "List all activities assigned to staff named 'John'.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'John';"
+    },
+    {
+      "question": "Show activities for staff named John.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'John';"
+    },
+    {
+      "question": "Retrieve activities assigned to John.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'John';"
+    },
+    {
+      "question": "Retrieve project titles along with their start dates.",
+      "sql": "SELECT title, start_date FROM project;"
+    },
+    {
+      "question": "Show project titles and start dates.",
+      "sql": "SELECT title, start_date FROM project;"
+    },
+    {
+      "question": "List titles and start dates of projects.",
+      "sql": "SELECT title, start_date FROM project;"
+    },
+    {
+      "question": "Show activity assigned to Aziz for project MIA.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id JOIN project T3 ON T1.project_id = T3.id WHERE T2.first_name = 'Aziz' AND T3.title = 'MIA';"
+    },
+    {
+      "question": "List activities for Aziz in the project titled MIA.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id JOIN project T3 ON T1.project_id = T3.id WHERE T2.first_name = 'Aziz' AND T3.title = 'MIA';"
+    },
+    {
+      "question": "Retrieve activities assigned to Aziz in the MIA project.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id JOIN project T3 ON T1.project_id = T3.id WHERE T2.first_name = 'Aziz' AND T3.title = 'MIA';"
+    },
+    {
+      "question": "Find the average achievement ratio for all projects.",
+      "sql": "SELECT AVG(achievement_ratio) FROM project;"
+    },
+    {
+      "question": "What is the average achievement ratio across all projects?",
+      "sql": "SELECT AVG(achievement_ratio) FROM project;"
+    },
+    {
+      "question": "Calculate the average achievement ratio for every project.",
+      "sql": "SELECT AVG(achievement_ratio) FROM project;"
+    },
+    {
+      "question": "Show staff members with an email address ending in '@hitsolutions.com'.",
+      "sql": "SELECT * FROM staff WHERE email LIKE '%@hitsolutions.com';"
+    },
+    {
+      "question": "List all staff whose email ends with '@hitsolutions.com'.",
+      "sql": "SELECT * FROM staff WHERE email LIKE '%@hitsolutions.com';"
+    },
+    {
+      "question": "Retrieve staff records with emails that end in '@hitsolutions.com'.",
+      "sql": "SELECT * FROM staff WHERE email LIKE '%@hitsolutions.com';"
+    },
+    {
+      "question": "Count the number of staff members in each city.",
+      "sql": "SELECT city, COUNT(*) FROM staff GROUP BY city;"
+    },
+    {
+      "question": "How many staff members are there in each city?",
+      "sql": "SELECT city, COUNT(*) FROM staff GROUP BY city;"
+    },
+    {
+      "question": "List the number of staff members per city.",
+      "sql": "SELECT city, COUNT(*) FROM staff GROUP BY city;"
+    },
+    {
+      "question": "List all projects with a description containing the word 'urgent'.",
+      "sql": "SELECT * FROM project WHERE description LIKE '%urgent%';"
+    },
+    {
+      "question": "Show projects where the description includes 'urgent'.",
+      "sql": "SELECT * FROM project WHERE description LIKE '%urgent%';"
+    },
+    {
+      "question": "Retrieve projects with 'urgent' in their description.",
+      "sql": "SELECT * FROM project WHERE description LIKE '%urgent%';"
+    },
+    {
+      "question": "Show the full names of staff assigned to projects ending after '2025-03-01'.",
+      "sql": "SELECT T1.full_name FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.end_date > '2025-03-01';"
+    },
+    {
+      "question": "List staff members working on projects that end after March 1st, 2025.",
+      "sql": "SELECT T1.full_name FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.end_date > '2025-03-01';"
+    },
+    {
+      "question": "Retrieve the names of staff for projects with end dates later than 2025-03-01.",
+      "sql": "SELECT T1.full_name FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.end_date > '2025-03-01';"
+    },
+    {
+      "question": "Find the total number of resources per project.",
+      "sql": "SELECT project_id, COUNT(*) as ressource_count FROM project_ressource GROUP BY project_id;"
+    },
+    {
+      "question": "How many resources are assigned to each project?",
+      "sql": "SELECT project_id, COUNT(*) as ressource_count FROM project_ressource GROUP BY project_id;"
+    },
+    {
+      "question": "Show activities for staff ID 5 on '2025-03-10'.",
+      "sql": "SELECT * FROM activity WHERE staff_id = 5 AND start_date = '2025-03-10';"
+    },
+    {
+      "question": "List activities assigned to Ahmed on '2025-03-15'.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Ahmed' AND T1.start_date = '2025-03-15';"
+    },
+    {
+      "question": "Retrieve activities for staff ID 7 between '2025-03-01' and '2025-03-31'.",
+      "sql": "SELECT * FROM activity WHERE staff_id = 7 AND start_date BETWEEN '2025-03-01' AND '2025-03-31';"
+    },
+    {
+      "question": "Show activities for staff named John on '2025-04-01'.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'John' AND T1.start_date = '2025-04-01';"
+    },
+    {
+      "question": "List activities for staff ID 3 with end date before '2025-03-20'.",
+      "sql": "SELECT * FROM activity WHERE staff_id = 3 AND end_date < '2025-03-20';"
+    },
+    {
+      "question": "Retrieve activities for staff ID 8 with start date after '2025-03-05'.",
+      "sql": "SELECT * FROM activity WHERE staff_id = 8 AND start_date > '2025-03-05';"
+    },
+    {
+      "question": "Show activities for staff named Sarah on '2025-03-25'.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Sarah' AND T1.start_date = '2025-03-25';"
+    },
+    {
+      "question": "List activities for staff ID 2 with end date between '2025-03-01' and '2025-03-31'.",
+      "sql": "SELECT * FROM activity WHERE staff_id = 2 AND end_date BETWEEN '2025-03-01' AND '2025-03-31';"
+    },
+    {
+      "question": "Show activities for staff ID 2 ending between March 1st and March 31st, 2025.",
+      "sql": "SELECT * FROM activity WHERE staff_id = 2 AND end_date BETWEEN '2025-03-01' AND '2025-03-31';"
+    },
+    {
+      "question": "Retrieve activities for staff ID 2 with end dates from '2025-03-01' to '2025-03-31'.",
+      "sql": "SELECT * FROM activity WHERE staff_id = 2 AND end_date BETWEEN '2025-03-01' AND '2025-03-31';"
+    },
+    {
+      "question": "Retrieve activities for staff ID 6 on '2025-03-18'.",
+      "sql": "SELECT * FROM activity WHERE staff_id = 6 AND start_date = '2025-03-18';"
+    },
+    {
+      "question": "Show activities for staff ID 6 on March 18th, 2025.",
+      "sql": "SELECT * FROM activity WHERE staff_id = 6 AND start_date = '2025-03-18';"
+    },
+    {
+      "question": "List activities for staff ID 6 on the date '2025-03-18'.",
+      "sql": "SELECT * FROM activity WHERE staff_id = 6 AND start_date = '2025-03-18';"
+    },
+    {
+      "question": "Show activities for staff named Emily with start date before '2025-03-10'.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Emily' AND start_date < '2025-03-10';"
+    },
+    {
+      "question": "List activities for Emily starting before March 10th, 2025.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Emily' AND start_date < '2025-03-10';"
+    },
+    {
+      "question": "Retrieve activities for staff named Emily with start dates earlier than '2025-03-10'.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Emily' AND start_date < '2025-03-10';"
+    },
+    {
+      "question": "Show activities for staff named Emily with today's date.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Emily' AND T1.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Show activities assigned to Farouk today.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Farouk' AND T1.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Show activities assigned to Haythem today.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Haythem' AND T1.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Show activities assigned to Aziz today.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Aziz' AND T1.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "List activities assigned to Emily today.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Emily' AND T1.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "List activities assigned to Farouk today.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Farouk' AND T1.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "List activities assigned to Haythem today.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Haythem' AND T1.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "List activities assigned to Aziz today.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Aziz' AND T1.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Retrieve activities assigned to Emily today.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Emily' AND T1.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Retrieve activities assigned to Farouk today.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Farouk' AND T1.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Retrieve activities assigned to Haythem today.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Haythem' AND T1.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Retrieve activities assigned to Aziz today.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Aziz' AND T1.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "List the number of resources for every project.",
+      "sql": "SELECT project_id, COUNT(*) as ressource_count FROM project_ressource GROUP BY project_id;"
+    },
+    {
+      "question": "Show staff with more than 5 years of experience.",
+      "sql": "SELECT * FROM staff WHERE experience_years > 5;"
+    },
+    {
+      "question": "List staff members who have over 5 years of experience.",
+      "sql": "SELECT * FROM staff WHERE experience_years > 5;"
+    },
+    {
+      "question": "Retrieve staff records for those with more than 5 years of experience.",
+      "sql": "SELECT * FROM staff WHERE experience_years > 5;"
+    },
+    {
+      "question": "List projects ordered by start date in descending order.",
+      "sql": "SELECT * FROM project ORDER BY start_date DESC;"
+    },
+    {
+      "question": "Show projects sorted by start date from latest to earliest.",
+      "sql": "SELECT * FROM project ORDER BY start_date DESC;"
+    },
+    {
+      "question": "Retrieve projects in descending order of their start dates.",
+      "sql": "SELECT * FROM project ORDER BY start_date DESC;"
+    },
+    {
+      "question": "Find the average daily cost of staff with the occupation rate above 0.5.",
+      "sql": "SELECT AVG(average_daily_cost) FROM staff WHERE occupation_rate > 0.5;"
+    },
+    {
+      "question": "Calculate the average daily cost for staff with an occupation rate higher than 0.5.",
+      "sql": "SELECT AVG(average_daily_cost) FROM staff WHERE occupation_rate > 0.5;"
+    },
+    {
+      "question": "What is the average daily cost of staff whose occupation rate exceeds 0.5?",
+      "sql": "SELECT AVG(average_daily_cost) FROM staff WHERE occupation_rate > 0.5;"
+    },
+    {
+      "question": "Show the roles and staff IDs for projects under tenant 'HITsolutions'.",
+      "sql": "SELECT T2.role, T2.staff_id FROM project_ressource T2 JOIN project T3 ON T2.project_id = T3.id WHERE T3.tenant_name = 'HITsolutions';"
+    },
+    {
+      "question": "List the roles and IDs of staff working on projects for tenant 'HITsolutions'.",
+      "sql": "SELECT T2.role, T2.staff_id FROM project_ressource T2 JOIN project T3 ON T2.project_id = T3.id WHERE T3.tenant_name = 'HITsolutions';"
+    },
+    {
+      "question": "Retrieve the roles and staff IDs for projects associated with tenant 'HITsolutions'.",
+      "sql": "SELECT T2.role, T2.staff_id FROM project_ressource T2 JOIN project T3 ON T2.project_id = T3.id WHERE T3.tenant_name = 'HITsolutions';"
+    },
+    {
+      "question": "Count projects that are not archived.",
+      "sql": "SELECT COUNT(*) FROM project WHERE is_archived = FALSE;"
+    },
+    {
+      "question": "How many projects are currently not archived?",
+      "sql": "SELECT COUNT(*) FROM project WHERE is_archived = FALSE;"
+    },
+    {
+      "question": "Find the number of projects that have not been archived.",
+      "sql": "SELECT COUNT(*) FROM project WHERE is_archived = FALSE;"
+    },
+    {
+      "question": "List staff members with a picture and their phone numbers.",
+      "sql": "SELECT first_name, last_name, phone_number FROM staff WHERE picture IS NOT NULL;"
+    },
+    {
+      "question": "Show staff who have a picture and their contact numbers.",
+      "sql": "SELECT first_name, last_name, phone_number FROM staff WHERE picture IS NOT NULL;"
+    },
+    {
+      "question": "Retrieve staff members' names and phone numbers who have a picture.",
+      "sql": "SELECT first_name, last_name, phone_number FROM staff WHERE picture IS NOT NULL;"
+    },
+    {
+      "question": "Show the project title and provider ID for projects with a contract ID of 100.",
+      "sql": "SELECT title, provider_id FROM project WHERE contract_id = 100;"
+    },
+    {
+      "question": "List projects with contract ID 100 and their provider IDs.",
+      "sql": "SELECT title, provider_id FROM project WHERE contract_id = 100;"
+    },
+    {
+      "question": "Retrieve project titles and provider IDs for projects having contract ID 100.",
+      "sql": "SELECT title, provider_id FROM project WHERE contract_id = 100;"
+    },
+    {
+      "question": "Find the total staff activity rate including holidays for each job.",
+      "sql": "SELECT job_id, SUM(staff_activity_rate_including_holidays) FROM staff GROUP BY job_id;"
+    },
+    {
+      "question": "Show the sum of staff activity rates including holidays for each job.",
+      "sql": "SELECT job_id, SUM(staff_activity_rate_including_holidays) FROM staff GROUP BY job_id;"
+    },
+    {
+      "question": "List total staff activity rates including holidays grouped by job.",
+      "sql": "SELECT job_id, SUM(staff_activity_rate_including_holidays) FROM staff GROUP BY job_id;"
+    },
+    {
+      "question": "Show staff members in the state 'CA' with a zip code starting with '90'.",
+      "sql": "SELECT * FROM staff WHERE state = 'CA' AND zip_code LIKE '90%';"
+    },
+    {
+      "question": "List staff in California with zip codes beginning with '90'.",
+      "sql": "SELECT * FROM staff WHERE state = 'CA' AND zip_code LIKE '90%';"
+    },
+    {
+      "question": "Retrieve staff records for those in CA with zip codes starting with '90'.",
+      "sql": "SELECT * FROM staff WHERE state = 'CA' AND zip_code LIKE '90%';"
+    },
+    {
+      "question": "List projects with an achievement ratio greater than 0.8.",
+      "sql": "SELECT * FROM project WHERE achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Show projects where the achievement ratio is above 0.8.",
+      "sql": "SELECT * FROM project WHERE achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Retrieve projects with an achievement ratio higher than 0.8.",
+      "sql": "SELECT * FROM project WHERE achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Find the number of staff per agency.",
+      "sql": "SELECT agency_id, COUNT(*) FROM staff GROUP BY agency_id;"
+    },
+    {
+      "question": "Show the count of staff members for each agency.",
+      "sql": "SELECT agency_id, COUNT(*) FROM staff GROUP BY agency_id;"
+    },
+    {
+      "question": "List the number of staff members grouped by agency.",
+      "sql": "SELECT agency_id, COUNT(*) FROM staff GROUP BY agency_id;"
+    },
+    {
+      "question": "Show the full name and address of staff assigned to the project with ID 1.",
+      "sql": "SELECT T1.full_name, T1.address FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id WHERE T2.project_id = 1;"
+    },
+    {
+      "question": "List staff names and addresses for project ID 1.",
+      "sql": "SELECT T1.full_name, T1.address FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id WHERE T2.project_id = 1;"
+    },
+    {
+      "question": "Retrieve the full names and addresses of staff for project ID 1.",
+      "sql": "SELECT T1.full_name, T1.address FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id WHERE T2.project_id = 1;"
+    },
+    {
+      "question": "List projects and their providers where the end date is null.",
+      "sql": "SELECT title, provider_id FROM project WHERE end_date IS NULL;"
+    },
+    {
+      "question": "Show projects with no end date and their provider IDs.",
+      "sql": "SELECT title, provider_id FROM project WHERE end_date IS NULL;"
+    },
+    {
+      "question": "Retrieve projects and provider IDs where the end date is not set.",
+      "sql": "SELECT title, provider_id FROM project WHERE end_date IS NULL;"
+    },
+    {
+      "question": "Show all activities for the project with ID 1.",
+      "sql": "SELECT * FROM activity WHERE project_id = 1;"
+    },
+    {
+      "question": "List activities for project ID 1.",
+      "sql": "SELECT * FROM activity WHERE project_id = 1;"
+    },
+    {
+      "question": "Retrieve all activities associated with project ID 1.",
+      "sql": "SELECT * FROM activity WHERE project_id = 1;"
+    },
+    {
+      "question": "List all staff assigned to activities in project ID 1 who are also project resources.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project_ressource T3 ON T1.id = T3.staff_id WHERE T2.project_id = 1 AND T3.project_id = 1;"
+    },
+    {
+      "question": "Show staff names for activities in project ID 1 who are project resources.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project_ressource T3 ON T1.id = T3.staff_id WHERE T2.project_id = 1 AND T3.project_id = 1;"
+    },
+    {
+      "question": "Retrieve names of staff assigned to activities in project ID 1 and are project resources.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project_ressource T3 ON T1.id = T3.staff_id WHERE T2.project_id = 1 AND T3.project_id = 1;"
+    },
+    {
+      "question": "Show the titles of activities with status 'In Progress'.",
+      "sql": "SELECT T1.title FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE T2.title = 'In Progress';"
+    },
+    {
+      "question": "List activity titles with status 'In Progress'.",
+      "sql": "SELECT T1.title FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE T2.title = 'In Progress';"
+    },
+    {
+      "question": "Retrieve titles of activities that are 'In Progress'.",
+      "sql": "SELECT T1.title FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE T2.title = 'In Progress';"
+    },
+    {
+      "question": "Count the number of activities per project.",
+      "sql": "SELECT project_id, COUNT(*) FROM activity GROUP BY project_id;"
+    },
+    {
+      "question": "Show the count of activities for each project.",
+      "sql": "SELECT project_id, COUNT(*) FROM activity GROUP BY project_id;"
+    },
+    {
+      "question": "List the number of activities grouped by project.",
+      "sql": "SELECT project_id, COUNT(*) FROM activity GROUP BY project_id;"
+    },
+    {
+      "question": "Show the history of changes for activity ID 10.",
+      "sql": "SELECT * FROM activity_history WHERE activity_id = 10;"
+    },
+    {
+      "question": "Find the total estimation time for activities in project ID 1.",
+      "sql": "SELECT SUM(estimation) FROM activity WHERE project_id = 1;"
+    },
+    {
+      "question": "List staff members working on activities with a rank greater than 3.",
+      "sql": "SELECT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id WHERE T2.rank > 3;"
+    },
+    {
+      "question": "Show the latest status change for each activity.",
+      "sql": "SELECT T1.activity_id, T1.date, T2.title FROM activity_history T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE (T1.activity_id, T1.date) IN (SELECT activity_id, MAX(date) FROM activity_history GROUP BY activity_id);"
+    },
+    {
+      "question": "Count the number of activities with end date before '2025-04-01'.",
+      "sql": "SELECT COUNT(*) FROM activity WHERE end_date < '2025-04-01';"
+    },
+    {
+      "question": "How many activities have an end date earlier than April 1st, 2025?",
+      "sql": "SELECT COUNT(*) FROM activity WHERE end_date < '2025-04-01';"
+    },
+    {
+      "question": "List the number of activities ending before '2025-04-01'.",
+      "sql": "SELECT COUNT(*) FROM activity WHERE end_date < '2025-04-01';"
+    },
+    {
+      "question": "Show the project title and activity code for activities assigned to staff with ID 5.",
+      "sql": "SELECT T3.title, T1.code FROM activity T1 JOIN project T3 ON T1.project_id = T3.id WHERE T1.staff_id = 5;"
+    },
+    {
+      "question": "List all activities that are subtasks (have a parent).",
+      "sql": "SELECT * FROM activity WHERE parent_id IS NOT NULL;"
+    },
+    {
+      "question": "Show staff names and activity titles for activities in project ID 1 where the staff is a project resource.",
+      "sql": "SELECT T1.full_name, T2.title FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project_ressource T3 ON T1.id = T3.staff_id WHERE T2.project_id = 1 AND T3.project_id = 1;"
+    },
+    {
+      "question": "List the names of staff and titles of activities for project ID 1 where staff are project resources.",
+      "sql": "SELECT T1.full_name, T2.title FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project_ressource T3 ON T1.id = T3.staff_id WHERE T2.project_id = 1 AND T3.project_id = 1;"
+    },
+    {
+      "question": "Retrieve staff names and activity titles for project ID 1 where the staff are also project resources.",
+      "sql": "SELECT T1.full_name, T2.title FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project_ressource T3 ON T1.id = T3.staff_id WHERE T2.project_id = 1 AND T3.project_id = 1;"
+    },
+    {
+      "question": "Show the project title and provider ID for projects with a contract ID of 100.",
+      "sql": "SELECT title, provider_id FROM project WHERE contract_id = 100;"
+    },
+    {
+      "question": "List projects with contract ID 100 and their provider IDs.",
+      "sql": "SELECT title, provider_id FROM project WHERE contract_id = 100;"
+    },
+    {
+      "question": "Retrieve project titles and provider IDs for projects having contract ID 100.",
+      "sql": "SELECT title, provider_id FROM project WHERE contract_id = 100;"
+    },
+    {
+      "question": "Show the roles and staff IDs for projects under tenant 'HITsolutions'.",
+      "sql": "SELECT T2.role, T2.staff_id FROM project_ressource T2 JOIN project T3 ON T2.project_id = T3.id WHERE T3.tenant_name = 'HITsolutions';"
+    },
+    {
+      "question": "List the roles and IDs of staff working on projects for tenant 'HITsolutions'.",
+      "sql": "SELECT T2.role, T2.staff_id FROM project_ressource T2 JOIN project T3 ON T2.project_id = T3.id WHERE T3.tenant_name = 'HITsolutions';"
+    },
+    {
+      "question": "Find the average achievement ratio for projects with at least one activity.",
+      "sql": "SELECT AVG(T1.achievement_ratio) FROM project T1 WHERE EXISTS (SELECT 1 FROM activity T2 WHERE T2.project_id = T1.id);"
+    },
+    {
+      "question": "Show the activity status titles and their colors.",
+      "sql": "SELECT title, color FROM activity_status;"
+    },
+    {
+      "question": "List all activities ordered by their iteration rank.",
+      "sql": "SELECT * FROM activity ORDER BY iteration_rank;"
+    },
+    {
+      "question": "Show the user who made the most recent change to activity ID 20.",
+      "sql": "SELECT T1.user_id FROM activity_history T1 WHERE T1.activity_id = 20 ORDER BY T1.date DESC LIMIT 1;"
+    },
+    {
+      "question": "Count the number of status changes per activity.",
+      "sql": "SELECT activity_id, COUNT(*) FROM activity_history GROUP BY activity_id;"
+    },
+    {
+      "question": "Show staff working on activities with status 'Completed' under tenant 'HITsolutions'.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN activity_status T3 ON T2.activity_status_id = T3.id JOIN project T4 ON T2.project_id = T4.id WHERE T3.title = 'Completed' AND T4.tenant_name = 'HITsolutions';"
+    },
+    {
+      "question": "List projects with more than 5 activities.",
+      "sql": "SELECT T1.id, T1.title FROM project T1 JOIN (SELECT project_id, COUNT(*) as activity_count FROM activity GROUP BY project_id HAVING COUNT(*) > 5) T2 ON T1.id = T2.project_id;"
+    },
+    {
+      "question": "Show the description of activities updated on '2025-03-01'.",
+      "sql": "SELECT T1.description FROM activity T1 JOIN activity_history T2 ON T1.id = T2.activity_id WHERE T2.date = '2025-03-01';"
+    },
+    {
+      "question": "Show the total estimated time for activities assigned to staff with ID 3 in project ID 2.",
+      "sql": "SELECT SUM(T1.estimation) FROM activity T1 JOIN project_ressource T2 ON T1.staff_id = T2.staff_id WHERE T1.project_id = 2 AND T2.project_id = 2 AND T1.staff_id = 3;"
+    },
+    {
+      "question": "List staff and their activity codes for projects with achievement ratio above 0.7.",
+      "sql": "SELECT T1.full_name, T2.code FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project_ressource T3 ON T1.id = T3.staff_id JOIN project T4 ON T2.project_id = T4.id WHERE T4.achievement_ratio > 0.7 AND T2.project_id = T3.project_id;"
+    },
+    {
+      "question": "Find the average daily cost of staff working on activities with status 'In Progress'.",
+      "sql": "SELECT AVG(T1.average_daily_cost) FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN activity_status T3 ON T2.activity_status_id = T3.id WHERE T3.title = 'In Progress';"
+    },
+    {
+      "question": "Show the number of activities per staff member in project ID 4.",
+      "sql": "SELECT T1.id, T1.full_name, COUNT(T2.id) as activity_count FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project_ressource T3 ON T1.id = T3.staff_id WHERE T2.project_id = 4 AND T3.project_id = 4 GROUP BY T1.id, T1.full_name;"
+    },
+    {
+      "question": "List activities with a status change to 'Completed' after '2025-03-15'.",
+      "sql": "SELECT T1.id, T1.code FROM activity T1 JOIN activity_history T2 ON T1.id = T2.activity_id JOIN activity_status T3 ON T2.activity_status_id = T3.id WHERE T3.title = 'Completed' AND T2.date > '2025-03-15';"
+    },
+    {
+      "question": "Show the project titles and total activity ranks for projects under tenant 'HITsolutions'.",
+      "sql": "SELECT T1.title, SUM(T2.rank) as total_rank FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN project_ressource T3 ON T2.staff_id = T3.staff_id WHERE T1.tenant_name = 'HITsolutions' AND T2.project_id = T3.project_id GROUP BY T1.title;"
+    },
+    {
+      "question": "Find staff with the highest experience years working on activities.",
+      "sql": "SELECT T1.full_name, T1.experience_years FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id WHERE T1.experience_years = (SELECT MAX(experience_years) FROM staff);"
+    },
+    {
+      "question": "Count the number of activities with no parent in project ID 3.",
+      "sql": "SELECT COUNT(*) FROM activity WHERE project_id = 3 AND parent_id IS NULL;"
+    },
+    {
+      "question": "Show the status history for activities updated by user ID 7.",
+      "sql": "SELECT T1.activity_id, T2.title, T1.date FROM activity_history T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE T1.user_id = 7 ORDER BY T1.date DESC;"
+    },
+    {
+      "question": "List projects and their staff count where activities have an estimation over 10.",
+      "sql": "SELECT T1.title, COUNT(DISTINCT T3.staff_id) as staff_count FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN project_ressource T3 ON T2.staff_id = T3.staff_id WHERE T2.estimation > 10 AND T1.id = T3.project_id GROUP BY T1.title;"
+    },
+    {
+      "question": "Show the activity codes and their current status for project ID 5.",
+      "sql": "SELECT T1.code, T2.title FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE T1.project_id = 5;"
+    },
+    {
+      "question": "Find the maximum estimation time among activities with status 'Pending'.",
+      "sql": "SELECT MAX(T1.estimation) FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE T2.title = 'Pending';"
+    },
+    {
+      "question": "List staff who have not been assigned to any activity in project ID 6.",
+      "sql": "SELECT T1.full_name FROM staff T1 LEFT JOIN activity T2 ON T1.id = T2.staff_id AND T2.project_id = 6 LEFT JOIN project_ressource T3 ON T1.id = T3.staff_id AND T3.project_id = 6 WHERE T2.id IS NULL AND T3.project_id = 6;"
+    },
+    {
+      "question": "Show the total number of status changes for activities under tenant 'HITsolutions'.",
+      "sql": "SELECT COUNT(*) FROM activity_history T1 JOIN activity T2 ON T1.activity_id = T2.id JOIN project T3 ON T2.project_id = T3.id WHERE T3.tenant_name = 'HITsolutions';"
+    },
+    {
+      "question": "Calculate the average rank of activities per project.",
+      "sql": "SELECT T1.id, AVG(T2.rank) as avg_rank FROM project T1 JOIN activity T2 ON T1.id = T2.project_id GROUP BY T1.id;"
+    },
+    {
+      "question": "Show staff and their activity counts where the status is 'In Progress' or 'Completed'.",
+      "sql": "SELECT T1.full_name, COUNT(T2.id) as activity_count FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN activity_status T3 ON T2.activity_status_id = T3.id WHERE T3.title IN ('In Progress', 'Completed') GROUP BY T1.full_name;"
+    },
+    {
+      "question": "List projects with activities assigned to staff with experience over 10 years.",
+      "sql": "SELECT DISTINCT T1.title FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id JOIN project_ressource T4 ON T3.id = T4.staff_id WHERE T3.experience_years > 10 AND T1.id = T4.project_id;"
+    },
+    {
+      "question": "Show all activity types and their descriptions.",
+      "sql": "SELECT name, description FROM activity_type;"
+    },
+    {
+      "question": "List activity groups with their achievement ratios.",
+      "sql": "SELECT name, achievement_ratio FROM activity_group;"
+    },
+    {
+      "question": "Show all activity groups for project ID 5.",
+      "sql": "SELECT * FROM activity_group WHERE project_id = 5;"
+    },
+    {
+      "question": "List staff members with their job IDs and experience years.",
+      "sql": "SELECT full_name, job_id, experience_years FROM staff;"
+    },
+    {
+      "question": "Show staff members with high occupation rates (>0.8).",
+      "sql": "SELECT full_name, occupation_rate FROM staff WHERE occupation_rate > 0.8;"
+    },
+    {
+      "question": "List projects with their achievement ratios and descriptions.",
+      "sql": "SELECT title, achievement_ratio, description FROM project;"
+    },
+    {
+      "question": "Show all activity statuses with their colors.",
+      "sql": "SELECT title, color FROM activity_status;"
+    },
+    {
+      "question": "List activities with their parent activities.",
+      "sql": "SELECT T1.title, T2.title as parent_title FROM activity T1 LEFT JOIN activity T2 ON T1.parent_id = T2.id;"
+    },
+    {
+      "question": "Show staff members with their activity rates.",
+      "sql": "SELECT full_name, staff_activity_rate_including_holidays, staff_activity_rate_excluding_holidays FROM staff;"
+    },
+    {
+      "question": "List projects with their contract IDs and provider IDs.",
+      "sql": "SELECT title, contract_id, provider_id FROM project;"
+    },
+    {
+      "question": "Show activity groups with their parent groups.",
+      "sql": "SELECT T1.name, T2.name as parent_name FROM activity_group T1 LEFT JOIN activity_group T2 ON T1.parent_id = T2.id;"
+    },
+    {
+      "question": "List staff members with their level of study.",
+      "sql": "SELECT full_name, level_of_study FROM staff;"
+    },
+    {
+      "question": "Show activities with their activity types.",
+      "sql": "SELECT T1.title, T2.name as activity_type FROM activity T1 JOIN activity_type T2 ON T1.activity_type_id = T2.id;"
+    },
+    {
+      "question": "List projects with their project types.",
+      "sql": "SELECT T1.title, T2.title as project_type FROM project T1 JOIN project_type T2 ON T1.project_type_id = T2.id;"
+    },
+    {
+      "question": "Show staff members with their average daily costs.",
+      "sql": "SELECT full_name, average_daily_cost FROM staff;"
+    },
+    {
+      "question": "List activities with their ranks and parent ranks.",
+      "sql": "SELECT title, rank, parent_rank FROM activity;"
+    },
+    {
+      "question": "Show project resources with their roles.",
+      "sql": "SELECT T1.role, T2.full_name FROM project_ressource T1 JOIN staff T2 ON T1.staff_id = T2.id;"
+    },
+    {
+      "question": "List activities with their iteration ranks.",
+      "sql": "SELECT title, iteration_rank FROM activity;"
+    },
+    {
+      "question": "Show staff members with their unbilled activity rates.",
+      "sql": "SELECT full_name, unbilled_activity_rate FROM staff;"
+    },
+    {
+      "question": "List projects with their start and end dates.",
+      "sql": "SELECT title, start_date, end_date FROM project;"
+    },
+    {
+      "question": "Show activities with their achievement ratios.",
+      "sql": "SELECT title, achievement_ratio FROM activity;"
+    },
+    {
+      "question": "List staff members with their mobility information.",
+      "sql": "SELECT full_name, mobility FROM staff;"
+    },
+    {
+      "question": "Show activity groups with their ranks.",
+      "sql": "SELECT name, rank FROM activity_group;"
+    },
+    {
+      "question": "List projects with their codes and descriptions.",
+      "sql": "SELECT code, description FROM project;"
+    },
+    {
+      "question": "Show staff members with their curriculum vitae content types.",
+      "sql": "SELECT full_name, curriculum_vitae_content_type FROM staff WHERE curriculum_vitae IS NOT NULL;"
+    },
+    {
+      "question": "List activities with their priorities.",
+      "sql": "SELECT title, priority FROM activity;"
+    },
+    {
+      "question": "Show project types with their prefixes.",
+      "sql": "SELECT title, prefix FROM project_type;"
+    },
+    {
+      "question": "List staff members with their shared status.",
+      "sql": "SELECT full_name, shared FROM staff;"
+    },
+    {
+      "question": "Show activities with their status ranks.",
+      "sql": "SELECT title, status_rank FROM activity;"
+    },
+    {
+      "question": "List projects with their archived status.",
+      "sql": "SELECT title, is_archived FROM project;"
+    },
+    {
+      "question": "Show staff members with their company IDs.",
+      "sql": "SELECT full_name, company_id FROM staff;"
+    },
+    {
+      "question": "List activities with their code numbers.",
+      "sql": "SELECT title, code_number FROM activity;"
+    },
+    {
+      "question": "Show project types with their billable status.",
+      "sql": "SELECT title, billable FROM project_type;"
+    },
+    {
+      "question": "List staff members with their agency IDs.",
+      "sql": "SELECT full_name, agency_id FROM staff;"
+    },
+    {
+      "question": "Show activities with their estimates.",
+      "sql": "SELECT title, estimate FROM activity;"
+    },
+    {
+      "question": "List project types with their natures.",
+      "sql": "SELECT title, nature FROM project_type;"
+    },
+    {
+      "question": "Show staff members with their picture content types.",
+      "sql": "SELECT full_name, picture_content_type FROM staff WHERE picture IS NOT NULL;"
+    },
+    {
+      "question": "List activities with their labels.",
+      "sql": "SELECT title, label FROM activity;"
+    },
+    {
+      "question": "Show project resources with their tenant names.",
+      "sql": "SELECT role, tenant_name FROM project_ressource;"
+    },
+    {
+      "question": "List staff members with their tenant names.",
+      "sql": "SELECT full_name, tenant_name FROM staff;"
+    },
+    {
+      "question": "Show activities with their tenant names.",
+      "sql": "SELECT title, tenant_name FROM activity;"
+    },
+    {
+      "question": "List projects with their tenant names.",
+      "sql": "SELECT title, tenant_name FROM project;"
+    },
+    {
+      "question": "Show activity groups with their tenant names.",
+      "sql": "SELECT name, tenant_name FROM activity_group;"
+    },
+    {
+      "question": "List activity types with their tenant names.",
+      "sql": "SELECT name, tenant_name FROM activity_type;"
+    },
+    {
+      "question": "Show activity statuses with their tenant names.",
+      "sql": "SELECT title, tenant_name FROM activity_status;"
+    },
+    {
+      "question": "List project types with their tenant names.",
+      "sql": "SELECT title, tenant_name FROM project_type;"
+    },
+    {
+      "question": "Show activities with their contract items IDs.",
+      "sql": "SELECT title, contract_items_id FROM activity;"
+    },
+    {
+      "question": "List activities with their iteration IDs.",
+      "sql": "SELECT title, iteration_id FROM activity;"
+    },
+    {
+      "question": "Show activities with their activity group IDs.",
+      "sql": "SELECT title, activity_group_id FROM activity;"
+    },
+    {
+      "question": "List activities with their user IDs.",
+      "sql": "SELECT title, user_id FROM activity;"
+    },
+    {
+      "question": "Show activities with their activity status IDs.",
+      "sql": "SELECT title, activity_status_id FROM activity;"
+    },
+    {
+      "question": "List activities with their activity type IDs.",
+      "sql": "SELECT title, activity_type_id FROM activity;"
+    },
+    {
+      "question": "Show activities with their parent IDs.",
+      "sql": "SELECT title, parent_id FROM activity;"
+    },
+    {
+      "question": "List activities with their staff IDs.",
+      "sql": "SELECT title, staff_id FROM activity;"
+    },
+    {
+      "question": "Show activities with their project IDs.",
+      "sql": "SELECT title, project_id FROM activity;"
+    },
+    {
+      "question": "List activity groups with their parent IDs.",
+      "sql": "SELECT name, parent_id FROM activity_group;"
+    },
+    {
+      "question": "Show activity groups with their project IDs.",
+      "sql": "SELECT name, project_id FROM activity_group;"
+    },
+    {
+      "question": "List activity statuses with their project IDs.",
+      "sql": "SELECT title, project_id FROM activity_status;"
+    },
+    {
+      "question": "Show project resources with their staff IDs.",
+      "sql": "SELECT role, staff_id FROM project_ressource;"
+    },
+    {
+      "question": "List project resources with their project IDs.",
+      "sql": "SELECT role, project_id FROM project_ressource;"
+    },
+    {
+      "question": "Show staff members with their job IDs.",
+      "sql": "SELECT full_name, job_id FROM staff;"
+    },
+    {
+      "question": "List staff members with their company IDs.",
+      "sql": "SELECT full_name, company_id FROM staff;"
+    },
+    {
+      "question": "Show staff members with their agency IDs.",
+      "sql": "SELECT full_name, agency_id FROM staff;"
+    },
+    {
+      "question": "List projects with their contract IDs.",
+      "sql": "SELECT title, contract_id FROM project;"
+    },
+    {
+      "question": "Show projects with their project type IDs.",
+      "sql": "SELECT title, project_type_id FROM project;"
+    },
+    {
+      "question": "List projects with their provider IDs.",
+      "sql": "SELECT title, provider_id FROM project;"
+    },
+    {
+      "question": "Find the total number of activities per activity type.",
+      "sql": "SELECT T2.name, COUNT(*) FROM activity T1 JOIN activity_type T2 ON T1.activity_type_id = T2.id GROUP BY T2.name;"
+    },
+    {
+      "question": "Show the average achievement ratio per project type.",
+      "sql": "SELECT T2.title, AVG(T1.achievement_ratio) FROM project T1 JOIN project_type T2 ON T1.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "List staff members with their total number of activities and average achievement ratio.",
+      "sql": "SELECT T1.full_name, COUNT(T2.id) as activity_count, AVG(T2.achievement_ratio) as avg_achievement FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id GROUP BY T1.full_name;"
+    },
+    {
+      "question": "Show projects with their total number of activities and average estimation time.",
+      "sql": "SELECT T1.title, COUNT(T2.id) as activity_count, AVG(T2.estimation) as avg_estimation FROM project T1 JOIN activity T2 ON T1.id = T2.project_id GROUP BY T1.title;"
+    },
+    {
+      "question": "Find the number of staff members per job with their average experience years.",
+      "sql": "SELECT job_id, COUNT(*) as staff_count, AVG(experience_years) as avg_experience FROM staff GROUP BY job_id;"
+    },
+    {
+      "question": "List activity groups with their total number of activities and average achievement ratio.",
+      "sql": "SELECT T1.name, COUNT(T2.id) as activity_count, AVG(T2.achievement_ratio) as avg_achievement FROM activity_group T1 JOIN activity T2 ON T1.id = T2.activity_group_id GROUP BY T1.name;"
+    },
+    {
+      "question": "Show the distribution of activity statuses across all projects.",
+      "sql": "SELECT T2.title, COUNT(*) FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "Find the average daily cost per job for staff with high occupation rates.",
+      "sql": "SELECT job_id, AVG(average_daily_cost) FROM staff WHERE occupation_rate > 0.7 GROUP BY job_id;"
+    },
+    {
+      "question": "List projects with their total number of resources and average staff experience.",
+      "sql": "SELECT T1.title, COUNT(DISTINCT T2.staff_id) as resource_count, AVG(T3.experience_years) as avg_experience FROM project T1 JOIN project_ressource T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id GROUP BY T1.title;"
+    },
+    {
+      "question": "Show the number of activities per staff member in each project.",
+      "sql": "SELECT T1.full_name, T2.project_id, COUNT(T3.id) as activity_count FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project_ressource T3 ON T1.id = T3.staff_id AND T2.project_id = T3.project_id GROUP BY T1.full_name, T2.project_id;"
+    },
+    {
+      "question": "Find the average achievement ratio per tenant.",
+      "sql": "SELECT tenant_name, AVG(achievement_ratio) FROM project GROUP BY tenant_name;"
+    },
+    {
+      "question": "List staff members with their total number of projects and average project achievement ratio.",
+      "sql": "SELECT T1.full_name, COUNT(DISTINCT T2.project_id) as project_count, AVG(T3.achievement_ratio) as avg_achievement FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id GROUP BY T1.full_name;"
+    },
+    {
+      "question": "Show the distribution of activity types per project.",
+      "sql": "SELECT T1.title as project_title, T3.name as activity_type, COUNT(*) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN activity_type T3 ON T2.activity_type_id = T3.id GROUP BY T1.title, T3.name;"
+    },
+    {
+      "question": "Find the average estimation time per activity status.",
+      "sql": "SELECT T2.title, AVG(T1.estimation) FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "List projects with their total number of activities and average staff experience.",
+      "sql": "SELECT T1.title, COUNT(T2.id) as activity_count, AVG(T3.experience_years) as avg_experience FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id GROUP BY T1.title;"
+    },
+    {
+      "question": "Show the number of staff members per city with their average daily cost.",
+      "sql": "SELECT city, COUNT(*) as staff_count, AVG(average_daily_cost) as avg_daily_cost FROM staff GROUP BY city;"
+    },
+    {
+      "question": "Find the total number of activities per project type.",
+      "sql": "SELECT T2.title, COUNT(T1.id) FROM activity T1 JOIN project T3 ON T1.project_id = T3.id JOIN project_type T2 ON T3.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "List staff members with their total number of activities and average estimation time.",
+      "sql": "SELECT T1.full_name, COUNT(T2.id) as activity_count, AVG(T2.estimation) as avg_estimation FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id GROUP BY T1.full_name;"
+    },
+    {
+      "question": "Show the distribution of activity statuses per tenant.",
+      "sql": "SELECT T1.tenant_name, T3.title, COUNT(*) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN activity_status T3 ON T2.activity_status_id = T3.id GROUP BY T1.tenant_name, T3.title;"
+    },
+    {
+      "question": "Find the average achievement ratio per activity type.",
+      "sql": "SELECT T2.name, AVG(T1.achievement_ratio) FROM activity T1 JOIN activity_type T2 ON T1.activity_type_id = T2.id GROUP BY T2.name;"
+    },
+    {
+      "question": "List projects with their total number of resources and average activity estimation.",
+      "sql": "SELECT T1.title, COUNT(DISTINCT T2.staff_id) as resource_count, AVG(T3.estimation) as avg_estimation FROM project T1 JOIN project_ressource T2 ON T1.id = T2.project_id JOIN activity T3 ON T1.id = T3.project_id GROUP BY T1.title;"
+    },
+    {
+      "question": "Show the number of activities per staff member in each tenant.",
+      "sql": "SELECT T1.full_name, T4.tenant_name, COUNT(T2.id) as activity_count FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T4 ON T2.project_id = T4.id GROUP BY T1.full_name, T4.tenant_name;"
+    },
+    {
+      "question": "Find the average daily cost per project type.",
+      "sql": "SELECT T2.title, AVG(T3.average_daily_cost) FROM project T1 JOIN project_type T2 ON T1.project_type_id = T2.id JOIN project_ressource T4 ON T1.id = T4.project_id JOIN staff T3 ON T4.staff_id = T3.id GROUP BY T2.title;"
+    },
+    {
+      "question": "List staff members with their total number of projects and average project duration.",
+      "sql": "SELECT T1.full_name, COUNT(DISTINCT T2.project_id) as project_count, AVG(T3.end_date - T3.start_date) as avg_duration FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id GROUP BY T1.full_name;"
+    },
+    {
+      "question": "Show the distribution of activity types per tenant.",
+      "sql": "SELECT T1.tenant_name, T3.name, COUNT(*) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN activity_type T3 ON T2.activity_type_id = T3.id GROUP BY T1.tenant_name, T3.name;"
+    },
+    {
+      "question": "Find the average estimation time per project type.",
+      "sql": "SELECT T2.title, AVG(T1.estimation) FROM activity T1 JOIN project T3 ON T1.project_id = T3.id JOIN project_type T2 ON T3.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "List projects with their total number of activities and average staff occupation rate.",
+      "sql": "SELECT T1.title, COUNT(T2.id) as activity_count, AVG(T3.occupation_rate) as avg_occupation FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id GROUP BY T1.title;"
+    },
+    {
+      "question": "Show the number of staff members per state with their average experience.",
+      "sql": "SELECT state, COUNT(*) as staff_count, AVG(experience_years) as avg_experience FROM staff GROUP BY state;"
+    },
+    {
+      "question": "Find the total number of activities per tenant.",
+      "sql": "SELECT T1.tenant_name, COUNT(T2.id) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id GROUP BY T1.tenant_name;"
+    },
+    {
+      "question": "List staff members with their total number of activities and average activity duration.",
+      "sql": "SELECT T1.full_name, COUNT(T2.id) as activity_count, AVG(T2.end_date - T2.start_date) as avg_duration FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id GROUP BY T1.full_name;"
+    },
+    {
+      "question": "Show the distribution of activity statuses per project type.",
+      "sql": "SELECT T2.title, T3.title, COUNT(*) FROM project T1 JOIN project_type T2 ON T1.project_type_id = T2.id JOIN activity T4 ON T1.id = T4.project_id JOIN activity_status T3 ON T4.activity_status_id = T3.id GROUP BY T2.title, T3.title;"
+    },
+    {
+      "question": "Find the average achievement ratio per tenant.",
+      "sql": "SELECT tenant_name, AVG(achievement_ratio) FROM project GROUP BY tenant_name;"
+    },
+    {
+      "question": "List projects with their total number of resources and average staff activity rate.",
+      "sql": "SELECT T1.title, COUNT(DISTINCT T2.staff_id) as resource_count, AVG(T3.staff_activity_rate_including_holidays) as avg_activity_rate FROM project T1 JOIN project_ressource T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id GROUP BY T1.title;"
+    },
+    {
+      "question": "Show the number of activities per staff member in each project type.",
+      "sql": "SELECT T1.full_name, T3.title, COUNT(T2.id) as activity_count FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T4 ON T2.project_id = T4.id JOIN project_type T3 ON T4.project_type_id = T3.id GROUP BY T1.full_name, T3.title;"
+    },
+    {
+      "question": "Find the average daily cost per tenant.",
+      "sql": "SELECT T1.tenant_name, AVG(T3.average_daily_cost) FROM project T1 JOIN project_ressource T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id GROUP BY T1.tenant_name;"
+    },
+    {
+      "question": "List staff members with their total number of projects and average project achievement ratio.",
+      "sql": "SELECT T1.full_name, COUNT(DISTINCT T2.project_id) as project_count, AVG(T3.achievement_ratio) as avg_achievement FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id GROUP BY T1.full_name;"
+    },
+    {
+      "question": "Show the distribution of activity types per project type.",
+      "sql": "SELECT T2.title, T3.name, COUNT(*) FROM project T1 JOIN project_type T2 ON T1.project_type_id = T2.id JOIN activity T4 ON T1.id = T4.project_id JOIN activity_type T3 ON T4.activity_type_id = T3.id GROUP BY T2.title, T3.name;"
+    },
+    {
+      "question": "Find the average estimation time per tenant.",
+      "sql": "SELECT T1.tenant_name, AVG(T2.estimation) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id GROUP BY T1.tenant_name;"
+    },
+    {
+      "question": "List projects with their total number of activities and average staff unbilled activity rate.",
+      "sql": "SELECT T1.title, COUNT(T2.id) as activity_count, AVG(T3.unbilled_activity_rate) as avg_unbilled_rate FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id GROUP BY T1.title;"
+    },
+    {
+      "question": "Show the number of staff members per agency with their average daily cost.",
+      "sql": "SELECT T1.agency_id, COUNT(*) as staff_count, AVG(T1.average_daily_cost) as avg_daily_cost FROM staff T1 GROUP BY T1.agency_id;"
+    },
+    {
+      "question": "What is the total number of staff members in each agency and their average daily cost?",
+      "sql": "SELECT T1.agency_id, COUNT(*) as staff_count, AVG(T1.average_daily_cost) as avg_daily_cost FROM staff T1 GROUP BY T1.agency_id;"
+    },
+    {
+      "question": "Calculate the staff count and average daily cost per agency.",
+      "sql": "SELECT T1.agency_id, COUNT(*) as staff_count, AVG(T1.average_daily_cost) as avg_daily_cost FROM staff T1 GROUP BY T1.agency_id;"
+    },
+    {
+      "question": "For each agency, show how many staff members they have and what their average daily cost is.",
+      "sql": "SELECT T1.agency_id, COUNT(*) as staff_count, AVG(T1.average_daily_cost) as avg_daily_cost FROM staff T1 GROUP BY T1.agency_id;"
+    },
+    {
+      "question": "Display the number of employees and their average daily cost grouped by agency.",
+      "sql": "SELECT T1.agency_id, COUNT(*) as staff_count, AVG(T1.average_daily_cost) as avg_daily_cost FROM staff T1 GROUP BY T1.agency_id;"
+    },
+    {
+      "question": "List each agency's total staff count and the average daily cost of their employees.",
+      "sql": "SELECT T1.agency_id, COUNT(*) as staff_count, AVG(T1.average_daily_cost) as avg_daily_cost FROM staff T1 GROUP BY T1.agency_id;"
+    },
+    {
+      "question": "Show me the count of staff members and their average daily cost for each agency.",
+      "sql": "SELECT T1.agency_id, COUNT(*) as staff_count, AVG(T1.average_daily_cost) as avg_daily_cost FROM staff T1 GROUP BY T1.agency_id;"
+    },
+    {
+      "question": "What is the distribution of staff members across agencies and their average daily costs?",
+      "sql": "SELECT T1.agency_id, COUNT(*) as staff_count, AVG(T1.average_daily_cost) as avg_daily_cost FROM staff T1 GROUP BY T1.agency_id;"
+    },
+    {
+      "question": "Find the number of employees and average daily cost per agency.",
+      "sql": "SELECT T1.agency_id, COUNT(*) as staff_count, AVG(T1.average_daily_cost) as avg_daily_cost FROM staff T1 GROUP BY T1.agency_id;"
+    },
+    {
+      "question": "Get the staff count and average daily cost for each agency.",
+      "sql": "SELECT T1.agency_id, COUNT(*) as staff_count, AVG(T1.average_daily_cost) as avg_daily_cost FROM staff T1 GROUP BY T1.agency_id;"
+    },
+    {
+      "question": "Show the total number of staff and their average daily cost by agency.",
+      "sql": "SELECT T1.agency_id, COUNT(*) as staff_count, AVG(T1.average_daily_cost) as avg_daily_cost FROM staff T1 GROUP BY T1.agency_id;"
+    },
+    {
+      "question": "List all activities that are assigned to staff members with more than 5 years of experience.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.experience_years > 5;"
+    },
+    {
+      "question": "Show activities assigned to experienced staff members with over 5 years of experience.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.experience_years > 5;"
+    },
+    {
+      "question": "Display all tasks given to staff who have worked for more than 5 years.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.experience_years > 5;"
+    },
+    {
+      "question": "Find activities that are assigned to senior staff members with experience exceeding 5 years.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.experience_years > 5;"
+    },
+    {
+      "question": "Retrieve all tasks assigned to staff members who have more than 5 years of experience.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.experience_years > 5;"
+    },
+    {
+      "question": "Show me activities assigned to staff with experience greater than 5 years.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.experience_years > 5;"
+    },
+    {
+      "question": "List tasks that are assigned to experienced staff members with over 5 years of work experience.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.experience_years > 5;"
+    },
+    {
+      "question": "Display activities assigned to staff members who have worked for more than 5 years.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.experience_years > 5;"
+    },
+    {
+      "question": "Find all tasks given to staff with experience exceeding 5 years.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.experience_years > 5;"
+    },
+    {
+      "question": "Show activities assigned to senior staff members who have more than 5 years of experience.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.experience_years > 5;"
+    },
+    {
+      "question": "What is the average achievement ratio for projects that have activities assigned to staff with high experience?",
+      "sql": "SELECT AVG(T1.achievement_ratio) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id WHERE T3.experience_years > 5;"
+    },
+    {
+      "question": "Calculate the average achievement ratio for projects with activities assigned to experienced staff.",
+      "sql": "SELECT AVG(T1.achievement_ratio) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id WHERE T3.experience_years > 5;"
+    },
+    {
+      "question": "Find the mean achievement ratio of projects where activities are assigned to staff with over 5 years of experience.",
+      "sql": "SELECT AVG(T1.achievement_ratio) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id WHERE T3.experience_years > 5;"
+    },
+    {
+      "question": "Show the average achievement ratio for projects that have tasks assigned to senior staff members.",
+      "sql": "SELECT AVG(T1.achievement_ratio) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id WHERE T3.experience_years > 5;"
+    },
+    {
+      "question": "What is the mean achievement ratio of projects with activities assigned to experienced employees?",
+      "sql": "SELECT AVG(T1.achievement_ratio) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id WHERE T3.experience_years > 5;"
+    },
+    {
+      "question": "Calculate the average achievement ratio for projects where tasks are assigned to staff with more than 5 years of experience.",
+      "sql": "SELECT AVG(T1.achievement_ratio) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id WHERE T3.experience_years > 5;"
+    },
+    {
+      "question": "Find the mean achievement ratio of projects that have activities assigned to senior staff members.",
+      "sql": "SELECT AVG(T1.achievement_ratio) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id WHERE T3.experience_years > 5;"
+    },
+    {
+      "question": "Show the average achievement ratio for projects with tasks assigned to experienced employees.",
+      "sql": "SELECT AVG(T1.achievement_ratio) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id WHERE T3.experience_years > 5;"
+    },
+    {
+      "question": "What is the mean achievement ratio of projects where activities are assigned to staff with over 5 years of experience?",
+      "sql": "SELECT AVG(T1.achievement_ratio) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id WHERE T3.experience_years > 5;"
+    },
+    {
+      "question": "Calculate the average achievement ratio for projects that have tasks assigned to senior staff members.",
+      "sql": "SELECT AVG(T1.achievement_ratio) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id WHERE T3.experience_years > 5;"
+    },
+    {
+      "question": "List all staff members who are assigned to activities in projects with high achievement ratios.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Show staff members working on activities in projects with achievement ratios above 0.8.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Display employees assigned to tasks in projects with high achievement ratios.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Find staff members who are working on activities in successful projects.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Retrieve the names of staff assigned to activities in projects with achievement ratios exceeding 0.8.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Show me staff members who are working on tasks in projects with high achievement ratios.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "List employees assigned to activities in projects with achievement ratios above 0.8.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Display staff members working on tasks in successful projects.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Find staff assigned to activities in projects with high achievement ratios.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Show employees working on tasks in projects with achievement ratios exceeding 0.8.",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "What is the total number of activities per project type?",
+      "sql": "SELECT T2.title, COUNT(T1.id) FROM activity T1 JOIN project T3 ON T1.project_id = T3.id JOIN project_type T2 ON T3.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "Count the number of activities for each project type.",
+      "sql": "SELECT T2.title, COUNT(T1.id) FROM activity T1 JOIN project T3 ON T1.project_id = T3.id JOIN project_type T2 ON T3.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "Show how many activities exist for each type of project.",
+      "sql": "SELECT T2.title, COUNT(T1.id) FROM activity T1 JOIN project T3 ON T1.project_id = T3.id JOIN project_type T2 ON T3.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "Display the count of activities grouped by project type.",
+      "sql": "SELECT T2.title, COUNT(T1.id) FROM activity T1 JOIN project T3 ON T1.project_id = T3.id JOIN project_type T2 ON T3.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "Find the total number of activities for each project type.",
+      "sql": "SELECT T2.title, COUNT(T1.id) FROM activity T1 JOIN project T3 ON T1.project_id = T3.id JOIN project_type T2 ON T3.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "List the number of activities per project type.",
+      "sql": "SELECT T2.title, COUNT(T1.id) FROM activity T1 JOIN project T3 ON T1.project_id = T3.id JOIN project_type T2 ON T3.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "Show the distribution of activities across different project types.",
+      "sql": "SELECT T2.title, COUNT(T1.id) FROM activity T1 JOIN project T3 ON T1.project_id = T3.id JOIN project_type T2 ON T3.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "Calculate how many activities exist for each type of project.",
+      "sql": "SELECT T2.title, COUNT(T1.id) FROM activity T1 JOIN project T3 ON T1.project_id = T3.id JOIN project_type T2 ON T3.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "Display the count of activities by project type.",
+      "sql": "SELECT T2.title, COUNT(T1.id) FROM activity T1 JOIN project T3 ON T1.project_id = T3.id JOIN project_type T2 ON T3.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "Find the number of activities for each project type.",
+      "sql": "SELECT T2.title, COUNT(T1.id) FROM activity T1 JOIN project T3 ON T1.project_id = T3.id JOIN project_type T2 ON T3.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "List all activities that are assigned to staff members with high occupation rates.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.occupation_rate > 0.8;"
+    },
+    {
+      "question": "Show activities assigned to staff with occupation rates above 0.8.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.occupation_rate > 0.8;"
+    },
+    {
+      "question": "Display tasks assigned to highly occupied staff members.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.occupation_rate > 0.8;"
+    },
+    {
+      "question": "Find activities assigned to staff with high occupation rates.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.occupation_rate > 0.8;"
+    },
+    {
+      "question": "Retrieve all tasks assigned to staff members with occupation rates exceeding 0.8.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.occupation_rate > 0.8;"
+    },
+    {
+      "question": "Show me activities assigned to staff with high occupation rates.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.occupation_rate > 0.8;"
+    },
+    {
+      "question": "List tasks assigned to staff members with occupation rates above 0.8.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.occupation_rate > 0.8;"
+    },
+    {
+      "question": "Display activities assigned to highly occupied staff members.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.occupation_rate > 0.8;"
+    },
+    {
+      "question": "Find all tasks assigned to staff with high occupation rates.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.occupation_rate > 0.8;"
+    },
+    {
+      "question": "Show activities assigned to staff members with occupation rates exceeding 0.8.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.occupation_rate > 0.8;"
+    },
+    {
+      "question": "What is the average daily cost of staff members assigned to activities in high-achievement projects?",
+      "sql": "SELECT AVG(T1.average_daily_cost) FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Calculate the average daily cost of staff working on activities in successful projects.",
+      "sql": "SELECT AVG(T1.average_daily_cost) FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Find the mean daily cost of staff assigned to activities in projects with high achievement ratios.",
+      "sql": "SELECT AVG(T1.average_daily_cost) FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Show the average daily cost of staff working on tasks in successful projects.",
+      "sql": "SELECT AVG(T1.average_daily_cost) FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "What is the mean daily cost of staff assigned to activities in high-achievement projects?",
+      "sql": "SELECT AVG(T1.average_daily_cost) FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Calculate the average daily cost of staff working on activities in projects with high achievement ratios.",
+      "sql": "SELECT AVG(T1.average_daily_cost) FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Find the mean daily cost of staff assigned to tasks in successful projects.",
+      "sql": "SELECT AVG(T1.average_daily_cost) FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Show the average daily cost of staff working on activities in high-achievement projects.",
+      "sql": "SELECT AVG(T1.average_daily_cost) FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "What is the mean daily cost of staff assigned to tasks in projects with high achievement ratios?",
+      "sql": "SELECT AVG(T1.average_daily_cost) FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Calculate the average daily cost of staff working on activities in successful projects.",
+      "sql": "SELECT AVG(T1.average_daily_cost) FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Find staff members who are not assigned to any activities.",
+      "sql": "SELECT * FROM staff T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.staff_id = T1.id);"
+    },
+    {
+      "question": "List all staff members who have no activities assigned to them.",
+      "sql": "SELECT * FROM staff T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.staff_id = T1.id);"
+    },
+    {
+      "question": "Show employees who are not working on any tasks.",
+      "sql": "SELECT * FROM staff T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.staff_id = T1.id);"
+    },
+    {
+      "question": "Which staff members have no current activities?",
+      "sql": "SELECT * FROM staff T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.staff_id = T1.id);"
+    },
+    {
+      "question": "Display all staff who are not involved in any activities.",
+      "sql": "SELECT * FROM staff T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.staff_id = T1.id);"
+    },
+    {
+      "question": "Find projects that have no activities assigned.",
+      "sql": "SELECT * FROM project T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.project_id = T1.id);"
+    },
+    {
+      "question": "List all projects without any associated activities.",
+      "sql": "SELECT * FROM project T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.project_id = T1.id);"
+    },
+    {
+      "question": "Show projects that have no tasks assigned to them.",
+      "sql": "SELECT * FROM project T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.project_id = T1.id);"
+    },
+    {
+      "question": "Which projects currently have no activities?",
+      "sql": "SELECT * FROM project T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.project_id = T1.id);"
+    },
+    {
+      "question": "Display all projects that are not associated with any activities.",
+      "sql": "SELECT * FROM project T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.project_id = T1.id);"
+    },
+    {
+      "question": "Find activity groups that have no child activities.",
+      "sql": "SELECT * FROM activity_group T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.activity_group_id = T1.id);"
+    },
+    {
+      "question": "List all activity groups without any associated activities.",
+      "sql": "SELECT * FROM activity_group T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.activity_group_id = T1.id);"
+    },
+    {
+      "question": "Show activity groups that have no tasks assigned.",
+      "sql": "SELECT * FROM activity_group T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.activity_group_id = T1.id);"
+    },
+    {
+      "question": "Which activity groups currently have no activities?",
+      "sql": "SELECT * FROM activity_group T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.activity_group_id = T1.id);"
+    },
+    {
+      "question": "Display all activity groups that are not associated with any activities.",
+      "sql": "SELECT * FROM activity_group T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.activity_group_id = T1.id);"
+    },
+    {
+      "question": "Find staff members who are not assigned to any projects.",
+      "sql": "SELECT * FROM staff T1 WHERE NOT EXISTS (SELECT 1 FROM project_ressource T2 WHERE T2.staff_id = T1.id);"
+    },
+    {
+      "question": "List all staff members who have no project assignments.",
+      "sql": "SELECT * FROM staff T1 WHERE NOT EXISTS (SELECT 1 FROM project_ressource T2 WHERE T2.staff_id = T1.id);"
+    },
+    {
+      "question": "Show employees who are not working on any projects.",
+      "sql": "SELECT * FROM staff T1 WHERE NOT EXISTS (SELECT 1 FROM project_ressource T2 WHERE T2.staff_id = T1.id);"
+    },
+    {
+      "question": "Which staff members have no current project assignments?",
+      "sql": "SELECT * FROM staff T1 WHERE NOT EXISTS (SELECT 1 FROM project_ressource T2 WHERE T2.staff_id = T1.id);"
+    },
+    {
+      "question": "Display all staff who are not involved in any projects.",
+      "sql": "SELECT * FROM staff T1 WHERE NOT EXISTS (SELECT 1 FROM project_ressource T2 WHERE T2.staff_id = T1.id);"
+    },
+    {
+      "question": "Find projects that have no staff assigned.",
+      "sql": "SELECT * FROM project T1 WHERE NOT EXISTS (SELECT 1 FROM project_ressource T2 WHERE T2.project_id = T1.id);"
+    },
+    {
+      "question": "List all projects without any assigned staff members.",
+      "sql": "SELECT * FROM project T1 WHERE NOT EXISTS (SELECT 1 FROM project_ressource T2 WHERE T2.project_id = T1.id);"
+    },
+    {
+      "question": "Show projects that have no team members assigned.",
+      "sql": "SELECT * FROM project T1 WHERE NOT EXISTS (SELECT 1 FROM project_ressource T2 WHERE T2.project_id = T1.id);"
+    },
+    {
+      "question": "Which projects currently have no staff assignments?",
+      "sql": "SELECT * FROM project T1 WHERE NOT EXISTS (SELECT 1 FROM project_ressource T2 WHERE T2.project_id = T1.id);"
+    },
+    {
+      "question": "Display all projects that are not associated with any staff members.",
+      "sql": "SELECT * FROM project T1 WHERE NOT EXISTS (SELECT 1 FROM project_ressource T2 WHERE T2.project_id = T1.id);"
+    },
+    {
+      "question": "Find activity groups that have no parent group.",
+      "sql": "SELECT * FROM activity_group T1 WHERE NOT EXISTS (SELECT 1 FROM activity_group T2 WHERE T2.id = T1.parent_id);"
+    },
+    {
+      "question": "List all activity groups without any parent group.",
+      "sql": "SELECT * FROM activity_group T1 WHERE NOT EXISTS (SELECT 1 FROM activity_group T2 WHERE T2.id = T1.parent_id);"
+    },
+    {
+      "question": "Show activity groups that are not sub-groups of any other group.",
+      "sql": "SELECT * FROM activity_group T1 WHERE NOT EXISTS (SELECT 1 FROM activity_group T2 WHERE T2.id = T1.parent_id);"
+    },
+    {
+      "question": "Which activity groups are top-level groups?",
+      "sql": "SELECT * FROM activity_group T1 WHERE NOT EXISTS (SELECT 1 FROM activity_group T2 WHERE T2.id = T1.parent_id);"
+    },
+    {
+      "question": "Display all activity groups that are not child groups of any other group.",
+      "sql": "SELECT * FROM activity_group T1 WHERE NOT EXISTS (SELECT 1 FROM activity_group T2 WHERE T2.id = T1.parent_id);"
+    },
+    {
+      "question": "Find activities that have no parent activity.",
+      "sql": "SELECT * FROM activity T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.id = T1.parent_id);"
+    },
+    {
+      "question": "List all activities without any parent activity.",
+      "sql": "SELECT * FROM activity T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.id = T1.parent_id);"
+    },
+    {
+      "question": "Show activities that are not sub-tasks of any other activity.",
+      "sql": "SELECT * FROM activity T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.id = T1.parent_id);"
+    },
+    {
+      "question": "Which activities are top-level tasks?",
+      "sql": "SELECT * FROM activity T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.id = T1.parent_id);"
+    },
+    {
+      "question": "Display all activities that are not child tasks of any other activity.",
+      "sql": "SELECT * FROM activity T1 WHERE NOT EXISTS (SELECT 1 FROM activity T2 WHERE T2.id = T1.parent_id);"
+    },
+    {
+      "question": "Show activities and their statuses.",
+      "sql": "SELECT T1.title, T2.title as status FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id;"
+    },
+    {
+      "question": "List activities along with their statuses.",
+      "sql": "SELECT T1.title, T2.title as status FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id;"
+    },
+    {
+      "question": "Retrieve activities and their corresponding statuses.",
+      "sql": "SELECT T1.title, T2.title as status FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id;"
+    },
+    {
+      "question": "Show activities of project with ID 5 and their statuses.",
+      "sql": "SELECT T1.title, T2.title as status FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE T1.project_id = 5;"
+    },
+    {
+      "question": "List activities for project ID 5 along with their statuses.",
+      "sql": "SELECT T1.title, T2.title as status FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE T1.project_id = 5;"
+    },
+    {
+      "question": "Retrieve activities of project ID 5 and their corresponding statuses.",
+      "sql": "SELECT T1.title, T2.title as status FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE T1.project_id = 5;"
+    },
+    {
+      "question": "Show activities with status 'To Do' for staff named Farouk.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id JOIN staff T3 ON T1.staff_id = T3.id WHERE T2.title = 'To Do' AND T3.first_name = 'Farouk';"
+    },
+    {
+      "question": "List tasks with 'To Do' status assigned to Farouk.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id JOIN staff T3 ON T1.staff_id = T3.id WHERE T2.title = 'To Do' AND T3.first_name = 'Farouk';"
+    },
+    {
+      "question": "Retrieve activities marked as 'To Do' for staff member Farouk.",
+      "sql": "SELECT T1.* FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id JOIN staff T3 ON T1.staff_id = T3.id WHERE T2.title = 'To Do' AND T3.first_name = 'Farouk';"
+    },
+    {
+      "question": "What are the 'To Do' activities assigned to Farouk?",
+      "sql": "SELECT T1.* FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id JOIN staff T3 ON T1.staff_id = T3.id WHERE T2.title = 'To Do' AND T3.first_name = 'Farouk';"
+    },
+    {
+      "question": "Show activities with their statuses and their corresponding project titles.",
+      "sql": "SELECT T1.title as activity_title, T2.title as status, T3.title as project_title FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id JOIN project T3 ON T1.project_id = T3.id;"
+    },
+    {
+      "question": "List activities along with their statuses and the names of their assigned staff.",
+      "sql": "SELECT T1.title as activity_title, T2.title as status, T3.full_name as staff_name FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id JOIN staff T3 ON T1.staff_id = T3.id;"
+    },
+    {
+      "question": "Retrieve activities, their statuses, and the names of their activity groups.",
+      "sql": "SELECT T1.title as activity_title, T2.title as status, T3.name as activity_group_name FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id JOIN activity_group T3 ON T1.activity_group_id = T3.id;"
+    },
+    {
+      "question": "Show activities with their statuses and the names of their activity types.",
+      "sql": "SELECT T1.title as activity_title, T2.title as status, T3.name as activity_type_name FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id JOIN activity_type T3 ON T1.activity_type_id = T3.id;"
+    },
+    {
+      "question": "List activities with their statuses and the names of their parent activities.",
+      "sql": "SELECT T1.title as activity_title, T2.title as status, T3.title as parent_activity_title FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id LEFT JOIN activity T3 ON T1.parent_id = T3.id;"
+    },
+    {
+      "question": "Which projects conclude on March 3rd, 2025?",
+      "sql": "SELECT * FROM project WHERE end_date = '2025-03-03';"
+    },
+    {
+      "question": "How many projects began in the year 2025?",
+      "sql": "SELECT COUNT(*) FROM project WHERE YEAR(start_date) = 2025;"
+    },
+    {
+      "question": "Who are all the employees named Ahmed?",
+      "sql": "SELECT * FROM staff WHERE first_name = 'Ahmed';"
+    },
+    {
+      "question": "Which staff work on the project called 'MIA'?",
+      "sql": "SELECT T1.id, T1.first_name, T1.last_name FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.title = 'MIA';"
+    },
+    {
+      "question": "How many projects started before March 4th, 2025?",
+      "sql": "SELECT COUNT(*) FROM project WHERE start_date < '2025-03-04';"
+    },
+    {
+      "question": "What are the names and start dates of every project?",
+      "sql": "SELECT title, start_date FROM project;"
+    },
+    {
+      "question": "What tasks does Ahmed have assigned?",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Ahmed';"
+    },
+    {
+      "question": "Who is assigned to project ID 3?",
+      "sql": "SELECT T1.* FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id WHERE T2.project_id = 3;"
+    },
+    {
+      "question": "What’s the average success rate of all projects?",
+      "sql": "SELECT AVG(achievement_ratio) FROM project;"
+    },
+    {
+      "question": "Which employees have an email ending in '@hitsolutions.com'?",
+      "sql": "SELECT * FROM staff WHERE email LIKE '%@hitsolutions.com';"
+    },
+    {
+      "question": "How many staff live in each city?",
+      "sql": "SELECT city, COUNT(*) FROM staff GROUP BY city;"
+    },
+    {
+      "question": "Which projects mention 'urgent' in their description?",
+      "sql": "SELECT * FROM project WHERE description LIKE '%urgent%';"
+    },
+    {
+      "question": "Who works on projects ending after March 1st, 2025?",
+      "sql": "SELECT T1.full_name FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id WHERE T3.end_date > '2025-03-01';"
+    },
+    {
+      "question": "How many resources are assigned to each project?",
+      "sql": "SELECT project_id, COUNT(*) as resource_count FROM project_ressource GROUP BY project_id;"
+    },
+    {
+      "question": "What tasks are scheduled for staff ID 5 on March 10th, 2025?",
+      "sql": "SELECT * FROM activity WHERE staff_id = 5 AND start_date = '2025-03-10';"
+    },
+    {
+      "question": "What activities does Ahmed have on March 15th, 2025?",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Ahmed' AND T1.start_date = '2025-03-15';"
+    },
+    {
+      "question": "What tasks does staff ID 7 have in March 2025?",
+      "sql": "SELECT * FROM activity WHERE staff_id = 7 AND start_date BETWEEN '2025-03-01' AND '2025-03-31';"
+    },
+    {
+      "question": "What are John’s activities on April 1st, 2025?",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'John' AND T1.start_date = '2025-04-01';"
+    },
+    {
+      "question": "What tasks does staff ID 3 have ending before March 20th, 2025?",
+      "sql": "SELECT * FROM activity WHERE staff_id = 3 AND end_date < '2025-03-20';"
+    },
+    {
+      "question": "What activities does staff ID 8 have starting after March 5th, 2025?",
+      "sql": "SELECT * FROM activity WHERE staff_id = 8 AND start_date > '2025-03-05';"
+    },
+    {
+      "question": "What’s Sarah’s schedule on March 25th, 2025?",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Sarah' AND T1.start_date = '2025-03-25';"
+    },
+    {
+      "question": "What tasks does staff ID 2 have ending in March 2025?",
+      "sql": "SELECT * FROM activity WHERE staff_id = 2 AND end_date BETWEEN '2025-03-01' AND '2025-03-31';"
+    },
+    {
+      "question": "What activities does staff ID 6 have on March 18th, 2025?",
+      "sql": "SELECT * FROM activity WHERE staff_id = 6 AND start_date = '2025-03-18';"
+    },
+    {
+      "question": "What tasks does Emily have starting before March 10th, 2025?",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Emily' AND start_date < '2025-03-10';"
+    },
+    {
+      "question": "What’s Farouk’s schedule for today?",
+      "sql": "SELECT T1.* FROM activity T1 JOIN staff T2 ON T1.staff_id = T2.id WHERE T2.first_name = 'Farouk' AND T1.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Who has more than 5 years of experience?",
+      "sql": "SELECT * FROM staff WHERE experience_years > 5;"
+    },
+    {
+      "question": "Which projects are sorted by their start date, latest first?",
+      "sql": "SELECT * FROM project ORDER BY start_date DESC;"
+    },
+    {
+      "question": "What’s the average cost per day for staff with occupation rates over 0.5?",
+      "sql": "SELECT AVG(average_daily_cost) FROM staff WHERE occupation_rate > 0.5;"
+    },
+    {
+      "question": "How many projects are still active?",
+      "sql": "SELECT COUNT(*) FROM project WHERE is_archived = FALSE;"
+    },
+    {
+      "question": "Which staff have photos and what are their phone numbers?",
+      "sql": "SELECT first_name, last_name, phone_number FROM staff WHERE picture IS NOT NULL;"
+    },
+    {
+      "question": "Which projects with contract ID 100 have which providers?",
+      "sql": "SELECT title, provider_id FROM project WHERE contract_id = 100;"
+    },
+    {
+      "question": "What’s the total activity rate including holidays for each job?",
+      "sql": "SELECT job_id, SUM(staff_activity_rate_including_holidays) FROM staff GROUP BY job_id;"
+    },
+    {
+      "question": "Who’s in California with a zip code starting with '90'?",
+      "sql": "SELECT * FROM staff WHERE state = 'CA' AND zip_code LIKE '90%';"
+    },
+    {
+      "question": "Which projects have a success rate above 0.8?",
+      "sql": "SELECT * FROM project WHERE achievement_ratio > 0.8;"
+    },
+    {
+      "question": "How many staff work for each agency?",
+      "sql": "SELECT agency_id, COUNT(*) FROM staff GROUP BY agency_id;"
+    },
+    {
+      "question": "Who works on project ID 1 and where do they live?",
+      "sql": "SELECT T1.full_name, T1.address FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id WHERE T2.project_id = 1;"
+    },
+    {
+      "question": "Which projects lack an end date?",
+      "sql": "SELECT title, provider_id FROM project WHERE end_date IS NULL;"
+    },
+    {
+      "question": "What tasks are assigned to project ID 1?",
+      "sql": "SELECT * FROM activity WHERE project_id = 1;"
+    },
+    {
+      "question": "Who works on activities and is a resource for project ID 1?",
+      "sql": "SELECT DISTINCT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project_ressource T3 ON T1.id = T3.staff_id WHERE T2.project_id = 1 AND T3.project_id = 1;"
+    },
+    {
+      "question": "Which activities are marked 'In Progress'?",
+      "sql": "SELECT T1.title FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE T2.title = 'In Progress';"
+    },
+    {
+      "question": "How many tasks does each project have?",
+      "sql": "SELECT project_id, COUNT(*) FROM activity GROUP BY project_id;"
+    },
+    {
+      "question": "What’s the total estimated time for project ID 1 activities?",
+      "sql": "SELECT SUM(estimation) FROM activity WHERE project_id = 1;"
+    },
+    {
+      "question": "Who works on high-ranked activities (rank > 3)?",
+      "sql": "SELECT T1.full_name FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id WHERE T2.rank > 3;"
+    },
+    {
+      "question": "How many tasks end before April 1st, 2025?",
+      "sql": "SELECT COUNT(*) FROM activity WHERE end_date < '2025-04-01';"
+    },
+    {
+      "question": "What projects and activity codes are assigned to staff ID 5?",
+      "sql": "SELECT T3.title, T1.code FROM activity T1 JOIN project T3 ON T1.project_id = T3.id WHERE T1.staff_id = 5;"
+    },
+    {
+      "question": "Which tasks are subtasks?",
+      "sql": "SELECT * FROM activity WHERE parent_id IS NOT NULL;"
+    },
+    {
+      "question": "What’s the success rate for projects with activities?",
+      "sql": "SELECT AVG(T1.achievement_ratio) FROM project T1 WHERE EXISTS (SELECT 1 FROM activity T2 WHERE T2.project_id = T1.id);"
+    },
+    {
+      "question": "What colors represent each activity status?",
+      "sql": "SELECT title, color FROM activity_status;"
+    },
+    {
+      "question": "Which activities are sorted by iteration rank?",
+      "sql": "SELECT * FROM activity ORDER BY iteration_rank;"
+    },
+    {
+      "question": "How many status changes have occurred per activity?",
+      "sql": "SELECT activity_id, COUNT(*) FROM activity_history GROUP BY activity_id;"
+    },
+    {
+      "question": "Which projects have more than 5 tasks?",
+      "sql": "SELECT T1.id, T1.title FROM project T1 JOIN (SELECT project_id, COUNT(*) as activity_count FROM activity GROUP BY project_id HAVING COUNT(*) > 5) T2 ON T1.id = T2.project_id;"
+    },
+    {
+      "question": "What’s the total estimated time for staff ID 3’s tasks in project ID 2?",
+      "sql": "SELECT SUM(T1.estimation) FROM activity T1 JOIN project_ressource T2 ON T1.staff_id = T2.staff_id WHERE T1.project_id = 2 AND T2.project_id = 2 AND T1.staff_id = 3;"
+    },
+    {
+      "question": "Who works on projects with a success rate over 0.7?",
+      "sql": "SELECT T1.full_name, T2.code FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project_ressource T3 ON T1.id = T3.staff_id JOIN project T4 ON T2.project_id = T4.id WHERE T4.achievement_ratio > 0.7 AND T2.project_id = T3.project_id;"
+    },
+    {
+      "question": "What’s the average cost of staff on 'In Progress' tasks?",
+      "sql": "SELECT AVG(T1.average_daily_cost) FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN activity_status T3 ON T2.activity_status_id = T3.id WHERE T3.title = 'In Progress';"
+    },
+    {
+      "question": "How many tasks does each staff member have in project ID 4?",
+      "sql": "SELECT T1.id, T1.full_name, COUNT(T2.id) as activity_count FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project_ressource T3 ON T1.id = T3.staff_id WHERE T2.project_id = 4 AND T3.project_id = 4 GROUP BY T1.id, T1.full_name;"
+    },
+    {
+      "question": "Which tasks switched to 'Completed' after March 15th, 2025?",
+      "sql": "SELECT T1.id, T1.code FROM activity T1 JOIN activity_history T2 ON T1.id = T2.activity_id JOIN activity_status T3 ON T2.activity_status_id = T3.id WHERE T3.title = 'Completed' AND T2.date > '2025-03-15';"
+    },
+    {
+      "question": "Who has the most experience and works on tasks?",
+      "sql": "SELECT T1.full_name, T1.experience_years FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id WHERE T1.experience_years = (SELECT MAX(experience_years) FROM staff);"
+    },
+    {
+      "question": "How many top-level tasks are in project ID 3?",
+      "sql": "SELECT COUNT(*) FROM activity WHERE project_id = 3 AND parent_id IS NULL;"
+    },
+    {
+      "question": "What tasks have an estimation over 10 and how many staff work on their projects?",
+      "sql": "SELECT T1.title, COUNT(DISTINCT T3.staff_id) as staff_count FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN project_ressource T3 ON T2.staff_id = T3.staff_id WHERE T2.estimation > 10 AND T1.id = T3.project_id GROUP BY T1.title;"
+    },
+    {
+      "question": "What are the codes and statuses of tasks in project ID 5?",
+      "sql": "SELECT T1.code, T2.title FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE T1.project_id = 5;"
+    },
+    {
+      "question": "What’s the longest estimated time for 'Pending' tasks?",
+      "sql": "SELECT MAX(T1.estimation) FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id WHERE T2.title = 'Pending';"
+    },
+    {
+      "question": "Which staff in project ID 6 have no tasks?",
+      "sql": "SELECT T1.full_name FROM staff T1 LEFT JOIN activity T2 ON T1.id = T2.staff_id AND T2.project_id = 6 LEFT JOIN project_ressource T3 ON T1.id = T3.staff_id AND T3.project_id = 6 WHERE T2.id IS NULL AND T3.project_id = 6;"
+    },
+    {
+      "question": "What’s the average task rank per project?",
+      "sql": "SELECT T1.id, AVG(T2.rank) as avg_rank FROM project T1 JOIN activity T2 ON T1.id = T2.project_id GROUP BY T1.id;"
+    },
+    {
+      "question": "How many tasks do staff have in 'In Progress' or 'Completed' status?",
+      "sql": "SELECT T1.full_name, COUNT(T2.id) as activity_count FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN activity_status T3 ON T2.activity_status_id = T3.id WHERE T3.title IN ('In Progress', 'Completed') GROUP BY T1.full_name;"
+    },
+    {
+      "question": "Which projects have tasks assigned to staff with over 10 years of experience?",
+      "sql": "SELECT DISTINCT T1.title FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id JOIN project_ressource T4 ON T3.id = T4.staff_id WHERE T3.experience_years > 10 AND T1.id = T4.project_id;"
+    },
+    {
+      "question": "What are all the activity types and their details?",
+      "sql": "SELECT name, description FROM activity_type;"
+    },
+    {
+      "question": "Which activity groups have what success rates?",
+      "sql": "SELECT name, achievement_ratio FROM activity_group;"
+    },
+    {
+      "question": "What activity groups belong to project ID 5?",
+      "sql": "SELECT * FROM activity_group WHERE project_id = 5;"
+    },
+    {
+      "question": "Who has what job and how experienced are they?",
+      "sql": "SELECT full_name, job_id, experience_years FROM staff;"
+    },
+    {
+      "question": "Which staff are highly occupied (rate > 0.8)?",
+      "sql": "SELECT full_name, occupation_rate FROM staff WHERE occupation_rate > 0.8;"
+    },
+    {
+      "question": "What are the projects’ success rates and descriptions?",
+      "sql": "SELECT title, achievement_ratio, description FROM project;"
+    },
+    {
+      "question": "What activities have which parent tasks?",
+      "sql": "SELECT T1.title, T2.title as parent_title FROM activity T1 LEFT JOIN activity T2 ON T1.parent_id = T2.id;"
+    },
+    {
+      "question": "What are the staff activity rates?",
+      "sql": "SELECT full_name, staff_activity_rate_including_holidays, staff_activity_rate_excluding_holidays FROM staff;"
+    },
+    {
+      "question": "Which projects have which contracts and providers?",
+      "sql": "SELECT title, contract_id, provider_id FROM project;"
+    },
+    {
+      "question": "What activity groups have which parent groups?",
+      "sql": "SELECT T1.name, T2.name as parent_name FROM activity_group T1 LEFT JOIN activity_group T2 ON T1.parent_id = T2.id;"
+    },
+    {
+      "question": "How many tasks are there per activity type?",
+      "sql": "SELECT T2.name, COUNT(*) FROM activity T1 JOIN activity_type T2 ON T1.activity_type_id = T2.id GROUP BY T2.name;"
+    },
+    {
+      "question": "What’s the average success rate per project type?",
+      "sql": "SELECT T2.title, AVG(T1.achievement_ratio) FROM project T1 JOIN project_type T2 ON T1.project_type_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "How many tasks and what’s the average success rate per staff member?",
+      "sql": "SELECT T1.full_name, COUNT(T2.id) as activity_count, AVG(T2.achievement_ratio) as avg_achievement FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id GROUP BY T1.full_name;"
+    },
+    {
+      "question": "What’s the task count and average estimation per project?",
+      "sql": "SELECT T1.title, COUNT(T2.id) as activity_count, AVG(T2.estimation) as avg_estimation FROM project T1 JOIN activity T2 ON T1.id = T2.project_id GROUP BY T1.title;"
+    },
+    {
+      "question": "How many staff per job and what’s their average experience?",
+      "sql": "SELECT job_id, COUNT(*) as staff_count, AVG(experience_years) as avg_experience FROM staff GROUP BY job_id;"
+    },
+    {
+      "question": "What’s the task count and success rate per activity group?",
+      "sql": "SELECT T1.name, COUNT(T2.id) as activity_count, AVG(T2.achievement_ratio) as avg_achievement FROM activity_group T1 JOIN activity T2 ON T1.id = T2.activity_group_id GROUP BY T1.name;"
+    },
+    {
+      "question": "How are activity statuses distributed across projects?",
+      "sql": "SELECT T2.title, COUNT(*) FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "What’s the average daily cost per job for busy staff?",
+      "sql": "SELECT job_id, AVG(average_daily_cost) FROM staff WHERE occupation_rate > 0.7 GROUP BY job_id;"
+    },
+    {
+      "question": "How many resources and what’s the average experience per project?",
+      "sql": "SELECT T1.title, COUNT(DISTINCT T2.staff_id) as resource_count, AVG(T3.experience_years) as avg_experience FROM project T1 JOIN project_ressource T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id GROUP BY T1.title;"
+    },
+    {
+      "question": "How many tasks does each staff member have per project?",
+      "sql": "SELECT T1.full_name, T2.project_id, COUNT(T3.id) as activity_count FROM staff T1 JOIN activity T2 ON T1.id = T2.staff_id JOIN project_ressource T3 ON T1.id = T3.staff_id AND T2.project_id = T3.project_id GROUP BY T1.full_name, T2.project_id;"
+    },
+    {
+      "question": "How many projects and what’s the average success rate per staff?",
+      "sql": "SELECT T1.full_name, COUNT(DISTINCT T2.project_id) as project_count, AVG(T3.achievement_ratio) as avg_achievement FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id GROUP BY T1.full_name;"
+    },
+    {
+      "question": "How are activity types distributed per project?",
+      "sql": "SELECT T1.title as project_title, T3.name as activity_type, COUNT(*) FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN activity_type T3 ON T2.activity_type_id = T3.id GROUP BY T1.title, T3.name;"
+    },
+    {
+      "question": "What’s the average estimation time per activity status?",
+      "sql": "SELECT T2.title, AVG(T1.estimation) FROM activity T1 JOIN activity_status T2 ON T1.activity_status_id = T2.id GROUP BY T2.title;"
+    },
+    {
+      "question": "What’s the task count and average staff experience per project?",
+      "sql": "SELECT T1.title, COUNT(T2.id) as activity_count, AVG(T3.experience_years) as avg_experience FROM project T1 JOIN activity T2 ON T1.id = T2.project_id JOIN staff T3 ON T2.staff_id = T3.id GROUP BY T1.title;"
+    },
+    {
+      "question": "How many staff are in each state and what’s their average experience?",
+      "sql": "SELECT state, COUNT(*) as staff_count, AVG(experience_years) as avg_experience FROM staff GROUP BY state;"
+    },
+    {
+      "question": "What’s the average success rate per activity type?",
+      "sql": "SELECT T2.name, AVG(T1.achievement_ratio) FROM activity T1 JOIN activity_type T2 ON T1.activity_type_id = T2.id GROUP BY T2.name;"
+    },
+    {
+      "question": "How many resources and what’s the average task estimation per project?",
+      "sql": "SELECT T1.title, COUNT(DISTINCT T2.staff_id) as resource_count, AVG(T3.estimation) as avg_estimation FROM project T1 JOIN project_ressource T2 ON T1.id = T2.project_id JOIN activity T3 ON T1.id = T3.project_id GROUP BY T1.title;"
+    },
+    {
+      "question": "What’s the average daily cost per project type?",
+      "sql": "SELECT T2.title, AVG(T3.average_daily_cost) FROM project T1 JOIN project_type T2 ON T1.project_type_id = T2.id JOIN project_ressource T4 ON T1.id = T4.project_id JOIN staff T3 ON T4.staff_id = T3.id GROUP BY T2.title;"
+    },
+    {
+      "question": "How many projects and what’s the average duration per staff?",
+      "sql": "SELECT T1.full_name, COUNT(DISTINCT T2.project_id) as project_count, AVG(T3.end_date - T3.start_date) as avg_duration FROM staff T1 JOIN project_ressource T2 ON T1.id = T2.staff_id JOIN project T3 ON T2.project_id = T3.id GROUP BY T1.full_name;"
+    },
+    {
+      "question": "Which projects started exactly on April 10th, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date = '2025-04-10';"
+    },
+    {
+      "question": "What projects kicked off on April 10th, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date = '2025-04-10';"
+    },
+    {
+      "question": "Can you list projects beginning on April 10, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date = '2025-04-10';"
+    },
+    {
+      "question": "What activities end after May 1st, 2025?",
+      "sql": "SELECT * FROM activity WHERE end_date > '2025-05-01';"
+    },
+    {
+      "question": "Which tasks conclude beyond May 1, 2025?",
+      "sql": "SELECT * FROM activity WHERE end_date > '2025-05-01';"
+    },
+    {
+      "question": "Can you show activities wrapping up after May 1, 2025?",
+      "sql": "SELECT * FROM activity WHERE end_date > '2025-05-01';"
+    },
+    {
+      "question": "Which projects have an achievement ratio above 0.9?",
+      "sql": "SELECT * FROM project WHERE achievement_ratio > 0.9;"
+    },
+    {
+      "question": "What projects boast a success rate over 90%?",
+      "sql": "SELECT * FROM project WHERE achievement_ratio > 0.9;"
+    },
+    {
+      "question": "Can you find projects with a completion rate exceeding 0.9?",
+      "sql": "SELECT * FROM project WHERE achievement_ratio > 0.9;"
+    },
+    {
+      "question": "What tasks belong to project ID 10?",
+      "sql": "SELECT * FROM activity WHERE project_id = 10;"
+    },
+    {
+      "question": "Which activities are tied to project 10?",
+      "sql": "SELECT * FROM activity WHERE project_id = 10;"
+    },
+    {
+      "question": "Can you list tasks assigned to project ID 10?",
+      "sql": "SELECT * FROM activity WHERE project_id = 10;"
+    },
+    {
+      "question": "What work is associated with project number 10?",
+      "sql": "SELECT * FROM activity WHERE project_id = 10;"
+    },
+    {
+      "question": "Which projects are still ongoing?",
+      "sql": "SELECT * FROM project WHERE is_archived = FALSE;"
+    },
+    {
+      "question": "What projects haven’t been archived yet?",
+      "sql": "SELECT * FROM project WHERE is_archived = FALSE;"
+    },
+    {
+      "question": "Can you show projects that remain active?",
+      "sql": "SELECT * FROM project WHERE is_archived = FALSE;"
+    },
+    {
+      "question": "Which projects are not marked as completed?",
+      "sql": "SELECT * FROM project WHERE is_archived = FALSE;"
+    },
+    {
+      "question": "What activities have a rank higher than 5?",
+      "sql": "SELECT * FROM activity WHERE rank > 5;"
+    },
+    {
+      "question": "Which tasks are prioritized above rank 5?",
+      "sql": "SELECT * FROM activity WHERE rank > 5;"
+    },
+    {
+      "question": "Can you list activities with a rank over 5?",
+      "sql": "SELECT * FROM activity WHERE rank > 5;"
+    },
+    {
+      "question": "What assignments have a priority greater than 5?",
+      "sql": "SELECT * FROM activity WHERE rank > 5;"
+    },
+    {
+      "question": "Which projects mention 'priority' in their description?",
+      "sql": "SELECT * FROM project WHERE description LIKE '%priority%';"
+    },
+    {
+      "question": "What projects include 'priority' in their details?",
+      "sql": "SELECT * FROM project WHERE description LIKE '%priority%';"
+    },
+    {
+      "question": "Can you find projects with 'priority' in the description?",
+      "sql": "SELECT * FROM project WHERE description LIKE '%priority%';"
+    },
+    {
+      "question": "Which projects note 'priority' in their summary?",
+      "sql": "SELECT * FROM project WHERE description LIKE '%priority%';"
+    },
+    {
+      "question": "What tasks lack an end date?",
+      "sql": "SELECT * FROM activity WHERE end_date IS NULL;"
+    },
+    {
+      "question": "Which activities have no completion date set?",
+      "sql": "SELECT * FROM activity WHERE end_date IS NULL;"
+    },
+    {
+      "question": "Can you show tasks without an end date?",
+      "sql": "SELECT * FROM activity WHERE end_date IS NULL;"
+    },
+    {
+      "question": "What assignments are missing their finish dates?",
+      "sql": "SELECT * FROM activity WHERE end_date IS NULL;"
+    },
+    {
+      "question": "Which projects began before June 15th, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date < '2025-06-15';"
+    },
+    {
+      "question": "What projects started prior to June 15, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date < '2025-06-15';"
+    },
+    {
+      "question": "Can you list projects launched before June 15th, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date < '2025-06-15';"
+    },
+    {
+      "question": "Which projects kicked off earlier than June 15, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date < '2025-06-15';"
+    },
+    {
+      "question": "What activities are assigned to staff ID 15?",
+      "sql": "SELECT * FROM activity WHERE staff_id = 15;"
+    },
+    {
+      "question": "Which tasks are handled by employee 15?",
+      "sql": "SELECT * FROM activity WHERE staff_id = 15;"
+    },
+    {
+      "question": "Can you show activities for staff member ID 15?",
+      "sql": "SELECT * FROM activity WHERE staff_id = 15;"
+    },
+    {
+      "question": "What work is designated to person 15?",
+      "sql": "SELECT * FROM activity WHERE staff_id = 15;"
+    },
+    {
+      "question": "Which projects use contract ID 200?",
+      "sql": "SELECT * FROM project WHERE contract_id = 200;"
+    },
+    {
+      "question": "What initiatives are linked to contract 200?",
+      "sql": "SELECT * FROM project WHERE contract_id = 200;"
+    },
+    {
+      "question": "Can you find projects under contract ID 200?",
+      "sql": "SELECT * FROM project WHERE contract_id = 200;"
+    },
+    {
+      "question": "Which project operate with contract number 200?",
+      "sql": "SELECT * FROM project WHERE contract_id = 200;"
+    },
+    {
+      "question": "What tasks have an estimation over 20 hours?",
+      "sql": "SELECT * FROM activity WHERE estimation > 20;"
+    },
+    {
+      "question": "Which activities are projected to take more than 20 hours?",
+      "sql": "SELECT * FROM activity WHERE estimation > 20;"
+    },
+    {
+      "question": "Can you list tasks with an estimate exceeding 20 hours?",
+      "sql": "SELECT * FROM activity WHERE estimation > 20;"
+    },
+    {
+      "question": "What assignments are expected to need over 20 hours?",
+      "sql": "SELECT * FROM activity WHERE estimation > 20;"
+    },
+    {
+      "question": "Which projects are tied to provider ID 50?",
+      "sql": "SELECT * FROM project WHERE provider_id = 50;"
+    },
+    {
+      "question": "What initiatives involve provider 50?",
+      "sql": "SELECT * FROM project WHERE provider_id = 50;"
+    },
+    {
+      "question": "Can you show projects linked to provider ID 50?",
+      "sql": "SELECT * FROM project WHERE provider_id = 50;"
+    },
+    {
+      "question": "Which project collaborate with provider number 50?",
+      "sql": "SELECT * FROM project WHERE provider_id = 50;"
+    },
+    {
+      "question": "What activities start on July 1st, 2025?",
+      "sql": "SELECT * FROM activity WHERE start_date = '2025-07-01';"
+    },
+    {
+      "question": "Which tasks begin exactly on July 1, 2025?",
+      "sql": "SELECT * FROM activity WHERE start_date = '2025-07-01';"
+    },
+    {
+      "question": "Can you list activities kicking off on July 1st, 2025?",
+      "sql": "SELECT * FROM activity WHERE start_date = '2025-07-01';"
+    },
+    {
+      "question": "What assignments launch on July 1, 2025?",
+      "sql": "SELECT * FROM activity WHERE start_date = '2025-07-01';"
+    },
+    {
+      "question": "Which projects have a title starting with 'Dev'?",
+      "sql": "SELECT * FROM project WHERE title LIKE 'Dev%';"
+    },
+    {
+      "question": "What projects begin their name with 'Dev'?",
+      "sql": "SELECT * FROM project WHERE title LIKE 'Dev%';"
+    },
+    {
+      "question": "Can you find projects titled with 'Dev' at the start?",
+      "sql": "SELECT * FROM project WHERE title LIKE 'Dev%';"
+    },
+    {
+      "question": "Which projects are named starting with 'Dev'?",
+      "sql": "SELECT * FROM project WHERE title LIKE 'Dev%';"
+    },
+    {
+      "question": "Which projects ended exactly on August 20th, 2025?",
+      "sql": "SELECT * FROM project WHERE end_date = '2025-08-20';"
+    },
+    {
+      "question": "What projects concluded on August 20, 2025?",
+      "sql": "SELECT * FROM project WHERE end_date = '2025-08-20';"
+    },
+    {
+      "question": "Can you list projects that finished on August 20th, 2025?",
+      "sql": "SELECT * FROM project WHERE end_date = '2025-08-20';"
+    },
+    {
+      "question": "Which projects wrapped up on August 20, 2025?",
+      "sql": "SELECT * FROM project WHERE end_date = '2025-08-20';"
+    },
+    {
+      "question": "What activities have an iteration rank below 3?",
+      "sql": "SELECT * FROM activity WHERE iteration_rank < 3;"
+    },
+    {
+      "question": "Which tasks are ranked under 3 in iteration?",
+      "sql": "SELECT * FROM activity WHERE iteration_rank < 3;"
+    },
+    {
+      "question": "Can you show activities with an iteration rank less than 3?",
+      "sql": "SELECT * FROM activity WHERE iteration_rank < 3;"
+    },
+    {
+      "question": "What assignments have a low iteration rank below 3?",
+      "sql": "SELECT * FROM activity WHERE iteration_rank < 3;"
+    },
+    {
+      "question": "Which projects have no start date assigned?",
+      "sql": "SELECT * FROM project WHERE start_date IS NULL;"
+    },
+    {
+      "question": "What projects lack a beginning date?",
+      "sql": "SELECT * FROM project WHERE start_date IS NULL;"
+    },
+    {
+      "question": "Can you find projects without a start date?",
+      "sql": "SELECT * FROM project WHERE start_date IS NULL;"
+    },
+    {
+      "question": "Which projects are missing their launch date?",
+      "sql": "SELECT * FROM project WHERE start_date IS NULL;"
+    },
+    {
+      "question": "What tasks use activity type ID 7?",
+      "sql": "SELECT * FROM activity WHERE activity_type_id = 7;"
+    },
+    {
+      "question": "Which activities fall under type ID 7?",
+      "sql": "SELECT * FROM activity WHERE activity_type_id = 7;"
+    },
+    {
+      "question": "Can you list tasks categorized as activity type 7?",
+      "sql": "SELECT * FROM activity WHERE activity_type_id = 7;"
+    },
+    {
+      "question": "What assignments are tagged with activity type 7?",
+      "sql": "SELECT * FROM activity WHERE activity_type_id = 7;"
+    },
+    {
+      "question": "Which projects have an achievement ratio below 0.5?",
+      "sql": "SELECT * FROM project WHERE achievement_ratio < 0.5;"
+    },
+    {
+      "question": "What projects are underperforming with a success rate below 50%?",
+      "sql": "SELECT * FROM project WHERE achievement_ratio < 0.5;"
+    },
+    {
+      "question": "Can you show projects with an achievement ratio less than 0.5?",
+      "sql": "SELECT * FROM project WHERE achievement_ratio < 0.5;"
+    },
+    {
+      "question": "Which projects have a completion rate under 0.5?",
+      "sql": "SELECT * FROM project WHERE achievement_ratio < 0.5;"
+    },
+    {
+      "question": "What activities belong to activity group ID 12?",
+      "sql": "SELECT * FROM activity WHERE activity_group_id = 12;"
+    },
+    {
+      "question": "Which tasks are grouped under ID 12?",
+      "sql": "SELECT * FROM activity WHERE activity_group_id = 12;"
+    },
+    {
+      "question": "Can you list activities in group 12?",
+      "sql": "SELECT * FROM activity WHERE activity_group_id = 12;"
+    },
+    {
+      "question": "What assignments are part of activity group 12?",
+      "sql": "SELECT * FROM activity WHERE activity_group_id = 12;"
+    },
+    {
+      "question": "Which projects are of type ID 3?",
+      "sql": "SELECT * FROM project WHERE project_type_id = 3;"
+    },
+    {
+      "question": "What projects are classified as project type 3?",
+      "sql": "SELECT * FROM project WHERE project_type_id = 3;"
+    },
+    {
+      "question": "Can you show projects under type ID 3?",
+      "sql": "SELECT * FROM project WHERE project_type_id = 3;"
+    },
+    {
+      "question": "Which projects belong to project type 3?",
+      "sql": "SELECT * FROM project WHERE project_type_id = 3;"
+    },
+    {
+      "question": "What tasks have a code starting with 'TASK-'?",
+      "sql": "SELECT * FROM activity WHERE code LIKE 'TASK-%';"
+    },
+    {
+      "question": "Which activities begin their code with 'TASK-'?",
+      "sql": "SELECT * FROM activity WHERE code LIKE 'TASK-%';"
+    },
+    {
+      "question": "Can you find tasks coded with 'TASK-' at the start?",
+      "sql": "SELECT * FROM activity WHERE code LIKE 'TASK-%';"
+    },
+    {
+      "question": "What assignments have codes prefixed with 'TASK-'?",
+      "sql": "SELECT * FROM activity WHERE code LIKE 'TASK-%';"
+    },
+    {
+      "question": "Which projects run between May 1st and June 30th, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date >= '2025-05-01' AND end_date <= '2025-06-30';"
+    },
+    {
+      "question": "What projects span May 1 to June 30, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date >= '2025-05-01' AND end_date <= '2025-06-30';"
+    },
+    {
+      "question": "Can you list projects active from May 1st to June 30th, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date >= '2025-05-01' AND end_date <= '2025-06-30';"
+    },
+    {
+      "question": "Which projects operate between May 1 and June 30, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date >= '2025-05-01' AND end_date <= '2025-06-30';"
+    },
+    {
+      "question": "What activities have an achievement ratio of exactly 1.0?",
+      "sql": "SELECT * FROM activity WHERE achievement_ratio = 1.0;"
+    },
+    {
+      "question": "Which tasks are fully completed with a 100% success rate?",
+      "sql": "SELECT * FROM activity WHERE achievement_ratio = 1.0;"
+    },
+    {
+      "question": "Can you show activities with an achievement ratio of 1.0?",
+      "sql": "SELECT * FROM activity WHERE achievement_ratio = 1.0;"
+    },
+    {
+      "question": "What assignments have a perfect completion rate of 1.0?",
+      "sql": "SELECT * FROM activity WHERE achievement_ratio = 1.0;"
+    },
+    {
+      "question": "Which projects started after September 10th, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date > '2025-09-10';"
+    },
+    {
+      "question": "What projects launched beyond September 10, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date > '2025-09-10';"
+    },
+    {
+      "question": "Can you find projects beginning after September 10th, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date > '2025-09-10';"
+    },
+    {
+      "question": "Which projects kicked off past September 10, 2025?",
+      "sql": "SELECT * FROM project WHERE start_date > '2025-09-10';"
+    },
+    {
+      "question": "What tasks end before April 25th, 2025?",
+      "sql": "SELECT * FROM activity WHERE end_date < '2025-04-25';"
+    },
+    {
+      "question": "Which activities conclude prior to April 25, 2025?",
+      "sql": "SELECT * FROM activity WHERE end_date < '2025-04-25';"
+    },
+    {
+      "question": "Can you list tasks finishing before April 25th, 2025?",
+      "sql": "SELECT * FROM activity WHERE end_date < '2025-04-25';"
+    },
+    {
+      "question": "What assignments wrap up earlier than April 25, 2025?",
+      "sql": "SELECT * FROM activity WHERE end_date < '2025-04-25';"
+    },
+    {
+      "question": "Which projects have descriptions longer than 50 characters?",
+      "sql": "SELECT * FROM project WHERE LENGTH(description) > 50;"
+    },
+    {
+      "question": "What projects have detailed descriptions over 50 characters?",
+      "sql": "SELECT * FROM project WHERE LENGTH(description) > 50;"
+    },
+    {
+      "question": "Can you show projects with descriptions exceeding 50 characters?",
+      "sql": "SELECT * FROM project WHERE LENGTH(description) > 50;"
+    },
+    {
+      "question": "Which projects feature summaries longer than 50 characters?",
+      "sql": "SELECT * FROM project WHERE LENGTH(description) > 50;"
+    },
+    {
+      "question": "What activities are assigned to status ID 4?",
+      "sql": "SELECT * FROM activity WHERE activity_status_id = 4;"
+    },
+    {
+      "question": "Which tasks fall under status 4?",
+      "sql": "SELECT * FROM activity WHERE activity_status_id = 4;"
+    },
+    {
+      "question": "Can you list activities with status ID 4?",
+      "sql": "SELECT * FROM activity WHERE activity_status_id = 4;"
+    },
+    {
+      "question": "What assignments are tagged with status 4?",
+      "sql": "SELECT * FROM activity WHERE activity_status_id = 4;"
+    },
+    {
+      "question": "Which projects have a title shorter than 10 characters?",
+      "sql": "SELECT * FROM project WHERE LENGTH(title) < 10;"
+    },
+    {
+      "question": "What projects have names under 10 characters?",
+      "sql": "SELECT * FROM project WHERE LENGTH(title) < 10;"
+    },
+    {
+      "question": "Can you find projects with titles less than 10 characters long?",
+      "sql": "SELECT * FROM project WHERE LENGTH(title) < 10;"
+    },
+    {
+      "question": "Which projects are named with fewer than 10 characters?",
+      "sql": "SELECT * FROM project WHERE LENGTH(title) < 10;"
+    },
+    {
+      "question": "What tasks have no parent activity?",
+      "sql": "SELECT * FROM activity WHERE parent_id IS NULL;"
+    },
+    {
+      "question": "Which activities stand alone without a parent?",
+      "sql": "SELECT * FROM activity WHERE parent_id IS NULL;"
+    },
+    {
+      "question": "Can you show tasks that aren’t subtasks?",
+      "sql": "SELECT * FROM activity WHERE parent_id IS NULL;"
+    },
+    {
+      "question": "What assignments lack a parent task?",
+      "sql": "SELECT * FROM activity WHERE parent_id IS NULL;"
+    },
+    {
+      "question": "Which projects ended after October 1st, 2025?",
+      "sql": "SELECT * FROM project WHERE end_date > '2025-10-01';"
+    },
+    {
+      "question": "What projects concluded beyond October 1, 2025?",
+      "sql": "SELECT * FROM project WHERE end_date > '2025-10-01';"
+    },
+    {
+      "question": "Can you list projects finishing after October 1st, 2025?",
+      "sql": "SELECT * FROM project WHERE end_date > '2025-10-01';"
+    },
+    {
+      "question": "Which projects wrapped up past October 1, 2025?",
+      "sql": "SELECT * FROM project WHERE end_date > '2025-10-01';"
+    },
+    {
+      "question": "What activities have a rank equal to 10?",
+      "sql": "SELECT * FROM activity WHERE rank = 10;"
+    },
+    {
+      "question": "Which tasks are prioritized exactly at rank 10?",
+      "sql": "SELECT * FROM activity WHERE rank = 10;"
+    },
+    {
+      "question": "Can you show activities with a rank of 10?",
+      "sql": "SELECT * FROM activity WHERE rank = 10;"
+    },
+    {
+      "question": "What assignments hold a priority of 10?",
+      "sql": "SELECT * FROM activity WHERE rank = 10;"
+    },
+    {
+      "question": "Which projects use provider ID 75?",
+      "sql": "SELECT * FROM project WHERE provider_id = 75;"
+    },
+    {
+      "question": "Which projects use contract ID 300?",
+      "sql": "SELECT * FROM project WHERE contract_id = 300;"
+    },
+    {
+      "question": "Which projects use provider ID 75 and contract ID 300?",
+      "sql": "SELECT * FROM project WHERE provider_id = 75 AND contract_id = 300;"
+    },
+    {
+      "question": "What tasks start between June 1st and June 15th, 2025?",
+      "sql": "SELECT * FROM activity WHERE start_date BETWEEN '2025-06-01' AND '2025-06-15';"
+    },
+    {
+      "question": "Which activities begin from June 1 to June 15, 2025?",
+      "sql": "SELECT * FROM activity WHERE start_date BETWEEN '2025-06-01' AND '2025-06-15';"
+    },
+    {
+      "question": "Can you list tasks kicking off between June 1st and 15th, 2025?",
+      "sql": "SELECT * FROM activity WHERE start_date BETWEEN '2025-06-01' AND '2025-06-15';"
+    },
+    {
+      "question": "What assignments launch from June 1 to June 15, 2025?",
+      "sql": "SELECT * FROM activity WHERE start_date BETWEEN '2025-06-01' AND '2025-06-15';"
+    },
+    {
+      "question": "Which projects have an achievement ratio between 0.6 and 0.8?",
+      "sql": "SELECT * FROM project WHERE achievement_ratio BETWEEN 0.6 AND 0.8;"
+    },
+    {
+      "question": "What projects have a success rate from 60% to 80%?",
+      "sql": "SELECT * FROM project WHERE achievement_ratio BETWEEN 0.6 AND 0.8;"
+    },
+    {
+      "question": "Can you show projects with a completion rate between 0.6 and 0.8?",
+      "sql": "SELECT * FROM project WHERE achievement_ratio BETWEEN 0.6 AND 0.8;"
+    },
+    {
+      "question": "Which projects fall within an achievement range of 0.6 to 0.8?",
+      "sql": "SELECT * FROM project WHERE achievement_ratio BETWEEN 0.6 AND 0.8;"
+    },
+    {
+      "question": "Which projects lack both start and end dates?",
+      "sql": "SELECT * FROM project WHERE start_date IS NULL AND end_date IS NULL;"
+    },
+    {
+      "question": "What projects have no start or finish dates?",
+      "sql": "SELECT * FROM project WHERE start_date IS NULL AND end_date IS NULL;"
+    },
+    {
+      "question": "Can you list projects without start and end dates?",
+      "sql": "SELECT * FROM project WHERE start_date IS NULL AND end_date IS NULL;"
+    },
+    {
+      "question": "Which projects are missing both their launch and completion dates?",
+      "sql": "SELECT * FROM project WHERE start_date IS NULL AND end_date IS NULL;"
+    },
+    {
+      "question": "What tasks have an estimation less than 5 hours?",
+      "sql": "SELECT * FROM activity WHERE estimation < 5;"
+    },
+    {
+      "question": "Which activities are projected to take under 5 hours?",
+      "sql": "SELECT * FROM activity WHERE estimation < 5;"
+    },
+    {
+      "question": "Can you show tasks with an estimate below 5 hours?",
+      "sql": "SELECT * FROM activity WHERE estimation < 5;"
+    },
+    {
+      "question": "What assignments are expected to need less than 5 hours?",
+      "sql": "SELECT * FROM activity WHERE estimation < 5;"
+    },
+    {
+      "question": "Which projects started in 2026?",
+      "sql": "SELECT * FROM project WHERE YEAR(start_date) = 2026;"
+    },
+    {
+      "question": "What project kicked off in the year 2026?",
+      "sql": "SELECT * FROM project WHERE YEAR(start_date) = 2026;"
+    },
+    {
+      "question": "Can you find projects beginning in 2026?",
+      "sql": "SELECT * FROM project WHERE YEAR(start_date) = 2026;"
+    },
+    {
+      "question": "Which project launched during 2026?",
+      "sql": "SELECT * FROM project WHERE YEAR(start_date) = 2026;"
+    },
+    {
+      "question": "What activities end in December 2025?",
+      "sql": "SELECT * FROM activity WHERE MONTH(end_date) = 12 AND YEAR(end_date) = 2025;"
+    },
+    {
+      "question": "Which tasks conclude in December of 2025?",
+      "sql": "SELECT * FROM activity WHERE MONTH(end_date) = 12 AND YEAR(end_date) = 2025;"
+    },
+    {
+      "question": "Can you list activities finishing in December 2025?",
+      "sql": "SELECT * FROM activity WHERE MONTH(end_date) = 12 AND YEAR(end_date) = 2025;"
+    },
+    {
+      "question": "What assignments wrap up in December 2025?",
+      "sql": "SELECT * FROM activity WHERE MONTH(end_date) = 12 AND YEAR(end_date) = 2025;"
+    },
+    {
+      "question": "Which projects have a contract ID greater than 500?",
+      "sql": "SELECT * FROM project WHERE contract_id > 500;"
+    },
+    {
+      "question": "What projects use contracts numbered above 500?",
+      "sql": "SELECT * FROM project WHERE contract_id > 500;"
+    },
+    {
+      "question": "Can you show projects with contract IDs over 500?",
+      "sql": "SELECT * FROM project WHERE contract_id > 500;"
+    },
+    {
+      "question": "Which projects are tied to contracts beyond 500?",
+      "sql": "SELECT * FROM project WHERE contract_id > 500;"
+    },
+    {
+      "question": "What tasks have an iteration rank of exactly 0?",
+      "sql": "SELECT * FROM activity WHERE iteration_rank = 0;"
+    },
+    {
+      "question": "Which activities are at iteration rank 0?",
+      "sql": "SELECT * FROM activity WHERE iteration_rank = 0;"
+    },
+    {
+      "question": "Can you find tasks with an iteration rank of 0?",
+      "sql": "SELECT * FROM activity WHERE iteration_rank = 0;"
+    },
+    {
+      "question": "What assignments hold an iteration rank of zero?",
+      "sql": "SELECT * FROM activity WHERE iteration_rank = 0;"
+    },
+    {
+      "question": "Which projects are archived and ended before July 1st, 2025?",
+      "sql": "SELECT * FROM project WHERE is_archived = TRUE AND end_date < '2025-07-01';"
+    },
+    {
+      "question": "What projects are completed and archived before July 1, 2025?",
+      "sql": "SELECT * FROM project WHERE is_archived = TRUE AND end_date < '2025-07-01';"
+    },
+    {
+      "question": "Can you list archived projects that finished prior to July 1st, 2025?",
+      "sql": "SELECT * FROM project WHERE is_archived = TRUE AND end_date < '2025-07-01';"
+    },
+    {
+      "question": "Which projects were archived and concluded before July 1, 2025?",
+      "sql": "SELECT * FROM project WHERE is_archived = TRUE AND end_date < '2025-07-01';"
+    },
+    {
+      "question": "What activities have a title longer than 20 characters?",
+      "sql": "SELECT * FROM activity WHERE LENGTH(title) > 20;"
+    },
+    {
+      "question": "Which tasks have names exceeding 20 characters?",
+      "sql": "SELECT * FROM activity WHERE LENGTH(title) > 20;"
+    },
+    {
+      "question": "Can you show activities with titles over 20 characters long?",
+      "sql": "SELECT * FROM activity WHERE LENGTH(title) > 20;"
+    },
+    {
+      "question": "What assignments feature titles longer than 20 characters?",
+      "sql": "SELECT * FROM activity WHERE LENGTH(title) > 20;"
+    },
+    {
+      "question": "Which projects have a provider ID less than 10?",
+      "sql": "SELECT * FROM project WHERE provider_id < 10;"
+    },
+    {
+      "question": "What projects use providers numbered below 10?",
+      "sql": "SELECT * FROM project WHERE provider_id < 10;"
+    },
+    {
+      "question": "Can you find projects with provider IDs under 10?",
+      "sql": "SELECT * FROM project WHERE provider_id < 10;"
+    },
+    {
+      "question": "Which projects are linked to providers less than 10?",
+      "sql": "SELECT * FROM project WHERE provider_id < 10;"
+    },
+    {
+      "question": "List projects that started today.",
+      "sql": "SELECT * FROM project WHERE start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Show activities ending today.",
+      "sql": "SELECT * FROM activity WHERE end_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Find projects active on today’s date.",
+      "sql": "SELECT * FROM project WHERE start_date <= CURRENT_DATE AND end_date >= CURRENT_DATE;"
+    },
+    {
+      "question": "List tasks that began before today.",
+      "sql": "SELECT * FROM activity WHERE start_date < CURRENT_DATE;"
+    },
+    {
+      "question": "Show projects not yet started as of today.",
+      "sql": "SELECT * FROM project WHERE start_date > CURRENT_DATE;"
+    },
+    {
+      "question": "Find activities due after today.",
+      "sql": "SELECT * FROM activity WHERE end_date > CURRENT_DATE;"
+    },
+    {
+      "question": "List projects that ended before today.",
+      "sql": "SELECT * FROM project WHERE end_date < CURRENT_DATE;"
+    },
+    {
+      "question": "Show tasks scheduled to start today.",
+      "sql": "SELECT * FROM activity WHERE start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Find projects overdue as of today.",
+      "sql": "SELECT * FROM project WHERE end_date < CURRENT_DATE AND is_archived = FALSE;"
+    },
+    {
+      "question": "List activities in progress today.",
+      "sql": "SELECT * FROM activity WHERE start_date <= CURRENT_DATE AND (end_date >= CURRENT_DATE OR end_date IS NULL);"
+    },
+    {
+      "question": "Show projects with no end date that started before today.",
+      "sql": "SELECT * FROM project WHERE start_date < CURRENT_DATE AND end_date IS NULL;"
+    },
+    {
+      "question": "List tasks starting today with an estimation over 10 hours.",
+      "sql": "SELECT * FROM activity WHERE start_date = CURRENT_DATE AND estimation > 10;"
+    },
+    {
+      "question": "Find projects that began today with an achievement ratio above 0.8.",
+      "sql": "SELECT * FROM project WHERE start_date = CURRENT_DATE AND achievement_ratio > 0.8;"
+    },
+    {
+      "question": "Show activities ending today for project ID 20.",
+      "sql": "SELECT * FROM activity WHERE end_date = CURRENT_DATE AND project_id = 20;"
+    },
+    {
+      "question": "List projects active today with a title containing 'Test'.",
+      "sql": "SELECT * FROM project WHERE start_date <= CURRENT_DATE AND end_date >= CURRENT_DATE AND title LIKE '%Test%';"
+    },
+    {
+      "question": "Find tasks due after today with a rank higher than 5.",
+      "sql": "SELECT * FROM activity WHERE end_date > CURRENT_DATE AND rank > 5;"
+    },
+    {
+      "question": "Show projects that ended today and are archived.",
+      "sql": "SELECT * FROM project WHERE end_date = CURRENT_DATE AND is_archived = TRUE;"
+    },
+    {
+      "question": "List activities starting before today with no parent task.",
+      "sql": "SELECT * FROM activity WHERE start_date < CURRENT_DATE AND parent_id IS NULL;"
+    },
+    {
+      "question": "Find projects launching today under contract ID 400.",
+      "sql": "SELECT * FROM project WHERE start_date = CURRENT_DATE AND contract_id = 400;"
+    },
+    {
+      "question": "Show tasks ongoing today with an iteration rank below 2.",
+      "sql": "SELECT * FROM activity WHERE start_date <= CURRENT_DATE AND (end_date >= CURRENT_DATE OR end_date IS NULL) AND iteration_rank < 2;"
+    },
+    {
+      "question": "List staff assigned to projects starting today.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id WHERE p.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Show tasks assigned to staff for projects ending today.",
+      "sql": "SELECT a.* FROM activity a JOIN project p ON a.project_id = p.id WHERE p.end_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Find staff working on projects active today.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id WHERE p.start_date <= CURRENT_DATE AND p.end_date >= CURRENT_DATE;"
+    },
+    {
+      "question": "List tasks starting today for staff assigned to those projects.",
+      "sql": "SELECT a.* FROM activity a JOIN project_ressource pr ON a.staff_id = pr.staff_id AND a.project_id = pr.project_id WHERE a.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Show staff assigned to projects that haven’t started as of today.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id WHERE p.start_date > CURRENT_DATE;"
+    },
+    {
+      "question": "Find tasks due after today for staff assigned to those projects.",
+      "sql": "SELECT a.* FROM activity a JOIN project_ressource pr ON a.staff_id = pr.staff_id AND a.project_id = pr.project_id WHERE a.end_date > CURRENT_DATE;"
+    },
+    {
+      "question": "List staff who worked on projects that ended before today.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id WHERE p.end_date < CURRENT_DATE;"
+    },
+    {
+      "question": "Show tasks scheduled to end today for staff on those projects.",
+      "sql": "SELECT a.* FROM activity a JOIN project_ressource pr ON a.staff_id = pr.staff_id AND a.project_id = pr.project_id WHERE a.end_date = CURRENT_DATE;"
+    },
+    {
+      "question": "Find staff assigned to projects overdue today.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id WHERE p.end_date < CURRENT_DATE AND p.is_archived = FALSE;"
+    },
+    {
+      "question": "List tasks ongoing today for staff assigned to those projects.",
+      "sql": "SELECT a.* FROM activity a JOIN project_ressource pr ON a.staff_id = pr.staff_id AND a.project_id = pr.project_id WHERE a.start_date <= CURRENT_DATE AND (a.end_date >= CURRENT_DATE OR a.end_date IS NULL);"
+    },
+    {
+      "question": "Show staff assigned to projects starting today with tasks due tomorrow.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id JOIN activity a ON pr.staff_id = a.staff_id AND p.id = a.project_id WHERE p.start_date = CURRENT_DATE AND a.end_date = CURRENT_DATE + INTERVAL 1 DAY;"
+    },
+    {
+      "question": "Find tasks starting today for staff on projects with an achievement ratio over 0.9.",
+      "sql": "SELECT a.* FROM activity a JOIN project_ressource pr ON a.staff_id = pr.staff_id AND a.project_id = pr.project_id JOIN project p ON a.project_id = p.id WHERE a.start_date = CURRENT_DATE AND p.achievement_ratio > 0.9;"
+    },
+    {
+      "question": "List staff assigned to projects active today with no tasks ending today.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id LEFT JOIN activity a ON pr.staff_id = a.staff_id AND pr.project_id = a.project_id AND a.end_date = CURRENT_DATE WHERE p.start_date <= CURRENT_DATE AND p.end_date >= CURRENT_DATE AND a.id IS NULL;"
+    },
+    {
+      "question": "Show tasks due after today for staff on projects that started before today.",
+      "sql": "SELECT a.* FROM activity a JOIN project_ressource pr ON a.staff_id = pr.staff_id AND a.project_id = pr.project_id JOIN project p ON a.project_id = p.id WHERE a.end_date > CURRENT_DATE AND p.start_date < CURRENT_DATE;"
+    },
+    {
+      "question": "Find staff assigned to projects ending today with tasks still pending.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id JOIN activity a ON pr.staff_id = a.staff_id AND pr.project_id = a.project_id WHERE p.end_date = CURRENT_DATE AND a.end_date > CURRENT_DATE;"
+    },
+    {
+      "question": "List tasks starting today for staff assigned to project ID 25.",
+      "sql": "SELECT a.* FROM activity a JOIN project_ressource pr ON a.staff_id = pr.staff_id AND a.project_id = pr.project_id WHERE a.start_date = CURRENT_DATE AND a.project_id = 25;"
+    },
+    {
+      "question": "Show staff working on projects overdue today with tasks over 15 hours.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id JOIN activity a ON pr.staff_id = a.staff_id AND pr.project_id = a.project_id WHERE p.end_date < CURRENT_DATE AND p.is_archived = FALSE AND a.estimation > 15;"
+    },
+    {
+      "question": "Find tasks active today for staff assigned to projects with a rank over 3.",
+      "sql": "SELECT a.* FROM activity a JOIN project_ressource pr ON a.staff_id = pr.staff_id AND a.project_id = pr.project_id WHERE a.start_date <= CURRENT_DATE AND (a.end_date >= CURRENT_DATE OR a.end_date IS NULL) AND a.rank > 3;"
+    },
+    {
+      "question": "List staff assigned to projects starting today with no tasks yet.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id LEFT JOIN activity a ON pr.staff_id = a.staff_id AND pr.project_id = a.project_id WHERE p.start_date = CURRENT_DATE AND a.id IS NULL;"
+    },
+    {
+      "question": "Show tasks ending today for staff on projects with a provider ID of 60.",
+      "sql": "SELECT a.* FROM activity a JOIN project_ressource pr ON a.staff_id = pr.staff_id AND a.project_id = pr.project_id JOIN project p ON a.project_id = p.id WHERE a.end_date = CURRENT_DATE AND p.provider_id = 60;"
+    },
+    {
+      "question": "List staff named Mohamed working on projects active today.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id WHERE s.first_name = 'Mohamed' AND p.start_date <= CURRENT_DATE AND p.end_date >= CURRENT_DATE;"
+    },
+    {
+      "question": "Show staff from Tunis with more than 10 years of experience.",
+      "sql": "SELECT * FROM staff WHERE city = 'Tunis' AND experience_years > 10;"
+    },
+    {
+      "question": "Find staff named Fatma assigned to tasks ending today.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN activity a ON s.id = a.staff_id WHERE s.first_name = 'Fatma' AND a.end_date = CURRENT_DATE;"
+    },
+    {
+      "question": "List staff in Sfax with an occupation rate above 0.75.",
+      "sql": "SELECT * FROM staff WHERE city = 'Sfax' AND occupation_rate > 0.75;"
+    },
+    {
+      "question": "Show staff named Ahmed with a daily cost below 150.",
+      "sql": "SELECT * FROM staff WHERE first_name = 'Ahmed' AND average_daily_cost < 150;"
+    },
+    {
+      "question": "Find staff from Sousse working on projects starting today.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id WHERE s.city = 'Sousse' AND p.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "List staff with emails ending in '@tunisien.com'.",
+      "sql": "SELECT * FROM staff WHERE email LIKE '%@tunisien.com';"
+    },
+    {
+      "question": "Show staff named Khaled with no picture uploaded.",
+      "sql": "SELECT * FROM staff WHERE first_name = 'Khaled' AND picture IS NULL;"
+    },
+    {
+      "question": "Find staff in Monastir assigned to tasks with rank over 5.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN activity a ON s.id = a.staff_id WHERE s.city = 'Monastir' AND a.rank > 5;"
+    },
+    {
+      "question": "List staff named Amina with phone numbers starting with '21'.",
+      "sql": "SELECT * FROM staff WHERE first_name = 'Amina' AND phone_number LIKE '21%';"
+    },
+    {
+      "question": "Show staff from Bizerte with less than 5 years of experience.",
+      "sql": "SELECT * FROM staff WHERE city = 'Bizerte' AND experience_years < 5;"
+    },
+    {
+      "question": "Find staff named Youssef assigned to projects overdue today.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id WHERE s.first_name = 'Youssef' AND p.end_date < CURRENT_DATE AND p.is_archived = FALSE;"
+    },
+    {
+      "question": "List staff in Gabès with an activity rate including holidays above 0.85.",
+      "sql": "SELECT * FROM staff WHERE city = 'Gabès' AND staff_activity_rate_including_holidays > 0.85;"
+    },
+    {
+      "question": "Show staff named Nour with a job ID of 7.",
+      "sql": "SELECT * FROM staff WHERE first_name = 'Nour' AND job_id = 7;"
+    },
+    {
+      "question": "Find staff from Ariana working on tasks starting today.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN activity a ON s.id = a.staff_id WHERE s.city = 'Ariana' AND a.start_date = CURRENT_DATE;"
+    },
+    {
+      "question": "List staff named Sami with addresses containing 'Rue'?",
+      "sql": "SELECT * FROM staff WHERE first_name = 'Sami' AND address LIKE '%Rue%';"
+    },
+    {
+      "question": "Show staff in Kairouan with an occupation rate below 0.4.",
+      "sql": "SELECT * FROM staff WHERE city = 'Kairouan' AND occupation_rate < 0.4;"
+    },
+    {
+      "question": "Find staff named Leila assigned to projects with no tasks yet.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN project_ressource pr ON s.id = pr.staff_id JOIN project p ON pr.project_id = p.id LEFT JOIN activity a ON pr.staff_id = a.staff_id AND pr.project_id = a.project_id WHERE s.first_name = 'Leila' AND a.id IS NULL;"
+    },
+    {
+      "question": "List staff from Nabeul with a daily cost between 200 and 400.",
+      "sql": "SELECT * FROM staff WHERE city = 'Nabeul' AND average_daily_cost BETWEEN 200 AND 400;"
+    },
+    {
+      "question": "Show staff named Hassen working on tasks due after today.",
+      "sql": "SELECT DISTINCT s.* FROM staff s JOIN activity a ON s.id = a.staff_id WHERE s.first_name = 'Hassen' AND a.end_date > CURRENT_DATE;"
+    },
+    {
+      "question": "Which staff have no picture uploaded?",
+      "sql": "SELECT * FROM staff WHERE picture IS NULL;"
+    },
+    {
+      "question": "Who among the employees lacks a photo?",
+      "sql": "SELECT * FROM staff WHERE picture IS NULL;"
+    },
+    {
+      "question": "Can you list personnel without a picture?",
+      "sql": "SELECT * FROM staff WHERE picture IS NULL;"
+    },
+    {
+      "question": "What staff members have no image on file?",
+      "sql": "SELECT * FROM staff WHERE picture IS NULL;"
+    },
+    {
+      "question": "Which staff have more than 15 years of experience?",
+      "sql": "SELECT * FROM staff WHERE experience_years > 15;"
+    },
+    {
+      "question": "Who has over 15 years of work experience?",
+      "sql": "SELECT * FROM staff WHERE experience_years > 15;"
+    },
+    {
+      "question": "Can you list employees with experience exceeding 15 years?",
+      "sql": "SELECT * FROM staff WHERE experience_years > 15;"
+    },
+    {
+      "question": "What personnel have been working for more than 15 years?",
+      "sql": "SELECT * FROM staff WHERE experience_years > 15;"
+    },
+    {
+      "question": "Who works for agency ID 30?",
+      "sql": "SELECT * FROM staff WHERE agency_id = 30;"
+    },
+    {
+      "question": "Which staff are assigned to agency 30?",
+      "sql": "SELECT * FROM staff WHERE agency_id = 30;"
+    },
+    {
+      "question": "Can you show employees under agency ID 30?",
+      "sql": "SELECT * FROM staff WHERE agency_id = 30;"
+    },
+    {
+      "question": "What workers belong to agency number 30?",
+      "sql": "SELECT * FROM staff WHERE agency_id = 30;"
+    },
+    {
+      "question": "Which staff have a job ID of 5?",
+      "sql": "SELECT * FROM staff WHERE job_id = 5;"
+    },
+    {
+      "question": "Who holds job position 5?",
+      "sql": "SELECT * FROM staff WHERE job_id = 5;"
+    },
+    {
+      "question": "Can you list employees with job ID 5?",
+      "sql": "SELECT * FROM staff WHERE job_id = 5;"
+    },
+    {
+      "question": "What personnel are in job role 5?",
+      "sql": "SELECT * FROM staff WHERE job_id = 5;"
+    },
+    {
+      "question": "Who has an address containing 'Avenue'?",
+      "sql": "SELECT * FROM staff WHERE address LIKE '%Avenue%';"
+    },
+    {
+      "question": "Which employees live on an 'Avenue'?",
+      "sql": "SELECT * FROM staff WHERE address LIKE '%Avenue%';"
+    },
+    {
+      "question": "Can you show staff with 'Avenue' in their address?",
+      "sql": "SELECT * FROM staff WHERE address LIKE '%Avenue%';"
+    },
+    {
+      "question": "What workers has addresses include 'Avenue'?",
+      "sql": "SELECT * FROM staff WHERE address LIKE '%Avenue%';"
+    }
+  ]
+}
